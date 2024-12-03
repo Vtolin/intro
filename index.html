@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajendra Pasha - Personal Website</title>
+</head>
+<style>
+    :root {
+  --bg-dark: #121212;
+  --bg-medium: #090909;
+  --bg-light: #333;
+  --text-color: #ffffff;
+  --accent-color: #BB86FC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.control-panel {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  padding: 15px;
+  transition: top 0.3s ease;
+  z-index: 1000;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.control-panel.open {
+  top: 0;
+}
+
+.control-btn {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: var(--bg-medium);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.control-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-dark);
+}
+
+.toggle-panel-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.header-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-medium);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s, max-height 0.3s ease;
+}
+
+.profile-section.visible {
+  opacity: 1;
+  visibility: visible;
+  max-height: 1000px;
+  transition: opacity 0.3s ease, visibility 0s 0s, max-height 0.3s ease;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.profile-name {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.profile-content {
+  text-align: center;
+  max-width: 500px;
+}
+
+.about-section {
+  background-color: var(--bg-medium);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.about-section.expanded {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.section {
+  display: none;
+  background-color: var(--bg-medium);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.section.active {
+  display: block;
+}
+
+/* Add smooth transitions for other elements */
+.purpose-btn {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.purpose-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-dark);
+}
+
+@media (min-width: 400px) and (max-width: 767px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-content {
+    text-align: center;
+  }
+
+  .about-section {
+    margin-top: 20px;
+  }
+
+  .about-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .profile-section {
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .profile-pic {
+    margin-bottom: 0;
+  }
+
+  .profile-content {
+    text-align: left;
+    flex: 1;
+  }
+
+  .control-panel {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+</style>
+<body>
+    <div class="control-panel" id="controlPanel">
+        <button class="control-btn" onclick="showSection('projects')">Projects</button>
+        <button class="control-btn" onclick="showSection('contact')">Contact</button>
+        <button class="control-btn" onclick="showSection('more-info')">More Info</button>
+    </div>
+
+    <button class="toggle-panel-btn" onclick="togglePanel()">☰</button>
+
+    <div class="container">
+        <img src="hehe.jpg" alt="Header Image" class="header-image">
+
+        <button class="purpose-btn">Purpose</button>
+
+        <div class="profile-section">
+            <img src="niya.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="profile-content">
+                <h1 class="profile-name">Rajendra Pasha</h1>
+                <p>Hey, I'm Rajendra Pasha. This is my first introduction website, and I made it with all the coding skills I've learned over the past few months. I know it's probably not the prettiest and may have some bugs, but I'm still a beginner and I'm still learning. I made this on a smartphone, so it's not the best website I've made because it's harder to code here.</p>
+                <p>//The pfp i use is my wife</p>
+                <p>//I did the rest of the code on my laptop</p>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2 class="about-title">About Me</h2>
+            <div class="about-details">
+                <p>Nickname: Pasha;</p>
+                <p>Age: 17;</p>
+                <p>Hobbies: Programming, Photography, Learning New Things;</p>
+                <p>Favorite Food: Mom's Cooking;</p>
+                <p>Daily Driver: Vivo X70 Pro & LG G5 SE;</p>
+                <p>Workstation: Dell Inspiron 14-3467 i7-7500u;</p>
+            </div>
+        </div>
+
+        <div id="projects" class="section">
+            <h2>Projects</h2>
+            <p>Here are some of the projects I've been working on:</p>
+            <ul>
+                <li>Personal Website (Current)</li>
+                <li>Photography Portfolio</li>
+                <li>Coding Practice Projects</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Want to get in touch? Here are some ways:</p>
+            <ul>
+                <li>Email: manusiamk14ebr@gmail.com</li>
+                <li>GitHub: @vtolin</li>
+                <li>Instagram: @manx100ultra</li>
+            </ul>
+        </div>
+        <div id="more-info" class="section">
+            <h2>More About Me</h2>
+            <p>I'm passionate about learning new technologies and exploring the world of programming. My goal is to continuously improve my skills and create meaningful projects that can make a difference.</p>
+            <p>I love photography as much as coding, and I'm always looking and learning for new ways to combine my interests and learn new things.</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const profileSection = document.querySelector('.profile-section')
+    const profilePic = document.querySelector('.profile-pic')
+    const profileName = document.querySelector('.profile-name')
+    const aboutSection = document.querySelector('.about-section')
+    const purposeBtn = document.querySelector('.purpose-btn')
+    const controlPanel = document.getElementById('controlPanel')
+    const togglePanelBtn = document.querySelector('.toggle-panel-btn')
+
+    // Start with the elements hidden
+    profileSection.classList.remove('visible')
+    profilePic.classList.remove('visible')
+    profileName.classList.remove('visible')
+    aboutSection.classList.remove('expanded')
+    purposeBtn.textContent = 'Show Purpose'
+
+    // Event listener for the Purpose button
+    purposeBtn.addEventListener('click', togglePurpose)
+
+    // Event listener for the control panel toggle button
+    togglePanelBtn.addEventListener('click', toggleControlPanel)
+});
+
+function togglePurpose() {
+    const profileSection = document.querySelector('.profile-section')
+    const profilePic = document.querySelector('.profile-pic')
+    const profileName = document.querySelector('.profile-name')
+    const aboutSection = document.querySelector('.about-section')
+    const purposeBtn = document.querySelector('.purpose-btn')
+
+    // Toggle visibility for profile section and about section
+    const isVisible = profileSection.classList.contains('visible')
+
+    // Toggle visibility and expand/collapse sections
+    profileSection.classList.toggle('visible', !isVisible)
+    profilePic.classList.toggle('visible', !isVisible)
+    profileName.classList.toggle('visible', !isVisible)
+    aboutSection.classList.toggle('expanded', !isVisible)
+
+    // Update the button text
+    purposeBtn.textContent = isVisible ? 'Show Purpose' : 'Hide Purpose'
+}
+
+function toggleControlPanel() {
+    const controlPanel = document.getElementById('controlPanel')
+    controlPanel.classList.toggle('open');
+}
+
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section')
+    sections.forEach(section => section.classList.remove('active'))
+
+    const selectedSection = document.getElementById(sectionId)
+    if (selectedSection) {
+        selectedSection.classList.add('active')
+    }
+}
+
+    </script>
+</body>
+</html>
