@@ -3,233 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajendra Pasha</title>
+    <title>Rajendra Pasha - Personal Website</title>
     <style>
-:root {
-  --bg-dark: #121212;
-  --bg-medium: #090909;
-  --bg-light: #333;
-  --text-color: #ffffff;
-  --accent-color: #BB86FC;
-}
+        :root {
+            --bg-dark: #121212;
+            --bg-medium: #090909;
+            --bg-light: #333;
+            --text-color: #ffffff;
+            --accent-color: #BB86FC;
+        }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-::-webkit-scrollbar {
-  width: 5px;
-  background-color: white;
-}
+        ::-webkit-scrollbar {
+            width: 5px;
+            background-color: white;
+        }
 
-::-webkit-scrollbar-button{
-  display: none;
-}
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
 
-::-webkit-scrollbar-thumb{
-  background-color: black;
-}
+        ::-webkit-scrollbar-thumb {
+            background-color: black;
+        }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-medium);
-  color: var(--text-color);
-  overflow-y: scroll;
-  line-height: 1.6;
-}
-.taskbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background-color: rgba(33, 33, 33, 0.5); 
-  backdrop-filter: blur(5px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-medium);
+            color: var(--text-color);
+            overflow-y: scroll;
+            line-height: 1.6;
+        }
 
-.taskbar-logo {
-  color: var(--accent-color);
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+        .taskbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: rgba(33, 33, 33, 0.5);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
 
-.taskbar-menu {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+        .taskbar-logo {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-.taskbar-menu-item, .taskbar-menu-item1 {
-  position: relative;
-  color: var(--text-color);
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+        .taskbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-.taskbar-menu-item:hover {
-  background-color: #352f3b;
-  cursor: pointer;
-}
+        .taskbar-menu-item, .taskbar-menu-item1 {
+            position: relative;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.taskbar-menu-item1 {
-  background-color: rgb(113, 85, 148);
-  border-radius: 6px;
-}
+        .taskbar-menu-item:hover {
+            background-color: #352f3b;
+        }
 
-/* Responsive Adjustments */
-@media (max-width: 600px) and (min-width: 384px) {
-  .taskbar {
-    padding: 0 10px;
-  }
+        .taskbar-menu-item1 {
+            background-color: rgb(113, 85, 148);
+            border-radius: 6px;
+        }
 
-  .taskbar-menu {
-    gap: 10px;
-  }
+        @media (max-width: 1200px) {
+            .taskbar-menu {
+                gap: 20px;
+            }
 
-  .taskbar-menu-item1, .taskbar-menu-item {
-    font-size: 0.8rem;
-  }
-}
+            .taskbar-menu-item1, .taskbar-menu-item {
+                font-size: 1rem;
+            }
+        }
 
-@media (max-width: 384px) {
-  .taskbar {
-    padding: 0 10px;
-  }
+        @media (max-width: 600px) {
+            .taskbar {
+                padding: 0 10px;
+            }
 
-  .taskbar-menu {
-    gap: 10px;
-  }
+            .taskbar-menu {
+                gap: 10px;
+            }
 
-  .taskbar-menu-item1, .taskbar-menu-item {
-    font-size: 0.6rem;
-  }
+            .taskbar-menu-item1, .taskbar-menu-item {
+                font-size: 0.8rem;
+            }
+        }
 
-  .taskbar-logo {
-    font-size: 1.4rem;
-  }
-}
+        @media (max-width: 480px) {
+            .taskbar {
+                padding: 0 10px;
+            }
 
-@media (min-width: 640px) {
-  .img {
-    max-width: 35%;
-    display: flex;
-  }
+            .taskbar-menu {
+                gap: 10px;
+            }
 
-  .content{
-    max-width: 60%;
-    text-align: left;
-  }
+            .taskbar-menu-item1, .taskbar-menu-item {
+                font-size: 0.6rem;
+            }
 
-.container2 {
-  padding-top: 60px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-h1{
-    text-align: center;
-}
-}
+            .taskbar-logo {
+                font-size: 1.4rem;
+            }
+        }
 
-.container2{
-    padding-top: 60px;
-    max-width: 770px;
-    margin: 0 auto;
-    background-color: black;
-    height: 100vh;
-}
+        .container2 {
+            background-color: black;
+            padding-top: 80px;
+            display: flex;
+            gap: 30px;
+            max-width: 770px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
 
-.content{
-    padding: 10px 0 0 20px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    overflow: hidden;
-    max-width: 460px;
-}
+        h1 {
+            font-size: 3rem;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                         0 0 10px rgba(255, 255, 255, 0.5),
+                         0 0 20px rgba(255, 255, 255, 0.6);
+        }
 
-.img{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-}
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            overflow: hidden;
+            max-width: 500px;
+        }
 
-.img1{
-    margin-top: 30px;
-    border: 3px solid white;
-    border-radius: 25px;
-    width: 175px;
-    margin-bottom: 10px;
-}
+        .img {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.p1{
-    color: green;
-    padding-left: 20px;
-}
+        .img1 {
+            margin-top: 30px;
+            border-radius: 170px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Responsive layout and image sizing from 601px upwards */
+        @media (min-width: 601px) {
+            .container2 {
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+
+            .content {
+                order: 1;
+                flex: 0 0 50%;
+                text-align: left;
+                max-width: 500px;
+            }
+
+            .img {
+                order: 2;
+                flex: 0 0 50%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .img1 {
+                transition: width 0.3s ease, border-radius 0.3s ease;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .img1{
+                width: 80%;
+                border-radius: 170px;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 800px) {
+            .img1 {
+                width: 70%;
+                border-radius: 140px;
+            }
+        }
+
+        @media (min-width: 801px) {
+            .img1 {
+                width: 80%;
+                border-radius: 160px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .taskbar-menu {
+                gap: 20px;
+            }
+
+            .taskbar-menu-item1, .taskbar-menu-item {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .taskbar {
+                padding: 0 10px;
+            }
+
+            .taskbar-menu {
+                gap: 10px;
+            }
+
+            .taskbar-menu-item1, .taskbar-menu-item {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 384px) {
+
+            .taskbar {
+                padding: 0 10px;
+            }
+
+            .taskbar-menu {
+                gap: 10px;
+            }
+
+            .taskbar-menu-item1, .taskbar-menu-item {
+                font-size: 0.6rem;
+            }
+
+            .taskbar-logo {
+                font-size: 1.4rem;
+            }
+        }
+
+
+
+        .exp {
+            padding-top: 80px;
+            max-width: 770px;
+            margin: 0 auto;
+            background-color: black;
+            height: 100vh;
+        }
+
+        .p1, .p2 {
+            color: rgb(188, 181, 181);
+        }
+
+        .journey-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .journey-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-dark);
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            color: rgb(203, 203, 203);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .journey-content a, .p1 a {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="taskbar">
-          <div class="taskbar-logo">
+    <div class="taskbar">
+        <div class="taskbar-logo">
             RP
-          </div>
-          <div class="taskbar-menu">
-              <div class="taskbar-menu-item" id="home" onclick="home()">Home</div>
-             <div class="taskbar-menu-item1" id="about">About</div>
-              <div class="taskbar-menu-item" id="reasons" onclick="reasons()">Reasons</div>
-              <div class="taskbar-menu-item" id="forYou" onclick="forYou()">For You</div>
-          </div>
         </div>
-      </div>  
+        <div class="taskbar-menu">
+            <div class="taskbar-menu-item" id="home" onclick="home()">Home</div>
+            <div class="taskbar-menu-item1" id="about">About</div>
+            <div class="taskbar-menu-item" id="reasons" onclick="reasons()">Reasons</div>
+        </div>
+    </div>  
 
     <div class="container2"> 
+        <div class="content">
+            <h1 class="hr">About Me</h1><br>
+            <p class="p1">
+                I'm Rajendra Pasha Rachim, also known as Pasha. I am a student at SMA Triguna Utama 
+                Syarif Hidayatullah. I started learning to code in March 2024 on <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>.
+                The first programming language I learned was JavaScript (after learning HTML and CSS). Currently, I am learning to become a full-stack developer and 
+                plan to explore Machine Learning and Software Engineering in the future.
+            </p>        
+        </div>
 
-      <div class="content">
-        <h1>
-            About Me
-        </h1><br>
-        <p>
-            I'm Rajendra Pasha Rachim, also known as Pasha. I am a student at SMA Triguna Utama 
-            Syarif Hidayatullah. I started learning to code in March 2024 on <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>.
-            The first programming language I learned was JavaScript (after learning HTML and CSS). Currently, I am learning to become a full-stack developer and 
-            plan to explore Machine Learning and Software Engineering in the future.
-        </p>        
-      </div>
-
-    <div class="img">
-        <img class="img1" src="eqi.jpg">
-        <p class="p1">//this is a Picture of my friend since i havent found mine thats actually good lmao</p>
+        <div class="img">
+            <img class="img1" src="me.jpeg" alt="Profile Picture">
+        </div>   
     </div>
 
     <div class="exp">
+        <h1 class="journey-title">My Journey</h1>
+        <div class="journey-content">
+            <p class="p2">
+                I started learning coding in March 2024 on <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a> 
+                after watching a short video about someone who became a software engineer starting on that platform. 
+                I've been interested in coding since 2022, but I didn't fully commit to learning it until March 2024. 
+                I began with the basics like HTML and CSS, and then moved on to JavaScript, as it's often recommended as a beginner-friendly 
+                programming language. Originally, my goal was to become a software engineer, but after diving into web development, 
+                I decided to focus on becoming a full-stack developer first. Once I gain enough experience, I plan to take my next steps 
+                into the software engineering market.
+            </p>
+        </div>
     </div>
-</div>
+
 </body>
 <script>
-function home() {
-    window.location.href = '../index.html'
-}
+    function home() {
+        window.location.href = '../index.html';
+    }
 
-function reasons() {
-  window.location.href = './reasons.html'
-}
-
-function forYou() {
-  window.location.href = './forU.html'
-}
-
+    function reasons() {
+        window.location.href = './reasons.html';
+    }
 </script>
 </html>
