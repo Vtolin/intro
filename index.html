@@ -337,7 +337,7 @@ body {
     <div class="container2">
         <img src="hehe.jpg" alt="Header Image" class="header-image">
 
-        <button class="purpose-btn">Purpose</button>
+        <button class="purpose-btn">Show</button>
 
         <div class="profile-section">
             <img src="niya.jpg" alt="Profile Picture" class="profile-pic">
@@ -402,7 +402,7 @@ body {
 
     <script>
       const purposeBtn = document.querySelector('.purpose-btn')
-purposeBtn.textContent = 'Purpose'
+purposeBtn.textContent = 'Show'
 
 // Event listener for the Purpose button
 purposeBtn.addEventListener('click', togglePurpose)
@@ -424,7 +424,7 @@ function togglePurpose() {
     aboutSection.classList.toggle('expanded', !isVisible)
 
     // Update the button text
-    purposeBtn.textContent = isVisible ? 'Purpose' : 'Hide'
+    purposeBtn.textContent = isVisible ? 'Show' : 'Hide'
 }
 
 function showSection(sectionId) {
