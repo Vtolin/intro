@@ -179,8 +179,13 @@
             display: inline-block;
         }
 
-        .cta .a1:hover, .a2:hover {
+        .cta .a1:hover {
             background-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .a2:hover{
+            background-color: var(--highlight-color);
             transform: scale(1.05);
         }
 
@@ -258,6 +263,11 @@
                 font-size: 0.9rem !important;
             }
         }
+
+        .prs{
+            text-decoration: underline;
+            color: var(--accent-color);
+        }
     </style>
 </head>
 <body>
@@ -276,7 +286,8 @@
     <!-- Header Section -->
     <section class="header" style="max-width: 900px; margin: 0 auto;">
         <h1>Reasons to Code</h1>
-        <p style="text-align: left;">Coding is more than just a skill; it’s a tool to create, innovate, and solve real-world problems. Here’s why I code—and why you should, too.</p>
+        <p style="text-align: left;">Coding is more than just a skill; it’s a tool to create, innovate, 
+            and solve real-world problems. <a class="prs">Here’s why I code</a> and why you should, too.</p>
     </section>
 
     <!-- Reasons Section -->
@@ -296,6 +307,12 @@
         <div class="reason">
             <h2>4. Lifelong Learning</h2>
             <p>Technology evolves constantly, meaning there’s always something new to learn and explore in coding.</p>
+        </div>
+        <div class="reason">
+            <h2>5. Hobby</h2>
+            <p>Coding is a rewarding hobby for those who enjoy solving problems and creating new things. As someone who also codes in my spare time, I find it a great way to 
+                challenge myself and learn new skills. It's a fulfilling pursuit that blends creativity with problem-solving.
+            </p>
         </div>
     </section>
     <section class="cta">
