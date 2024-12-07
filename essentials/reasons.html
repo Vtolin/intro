@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajendra Pasha - Personal Website</title>
+    <title>Reasons to Code</title>
     <style>
         :root {
             --bg-dark: #121212;
-            --bg-medium: #090909;
+            --bg-medium: #1e1e1e;
             --bg-light: #333;
             --text-color: #ffffff;
             --accent-color: #BB86FC;
+            --highlight-color: #0fc6b4;
         }
 
         * {
@@ -24,20 +25,16 @@
             background-color: white;
         }
 
-        ::-webkit-scrollbar-button {
-            display: none;
-        }
-
         ::-webkit-scrollbar-thumb {
-            background-color: black;
+            background-color: var(--bg-light);
         }
 
         body {
             font-family: Arial, sans-serif;
-            background-color: var(--bg-medium);
+            background-color: black;
             color: var(--text-color);
-            overflow-y: scroll;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .taskbar {
@@ -54,7 +51,6 @@
             padding: 0 20px;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
         }
 
         .taskbar-logo {
@@ -70,7 +66,6 @@
         }
 
         .taskbar-menu-item, .taskbar-menu-item1 {
-            position: relative;
             color: var(--text-color);
             text-decoration: none;
             padding: 10px 15px;
@@ -78,101 +73,133 @@
             cursor: pointer;
         }
 
-        .taskbar-menu-item:hover {
-            background-color: #352f3b;
-        }
-
         .taskbar-menu-item1 {
             background-color: rgb(113, 85, 148);
             border-radius: 6px;
         }
 
-        .container2 {
-            background-color: black;
-            padding-top: 80px;
-            display: flex;
-            gap: 30px;
-            max-width: 770px;
-            margin: 0 auto;
-            flex-wrap: wrap;
+        .taskbar-menu-item:hover {
+            background-color: var(--bg-light);
         }
 
-        h1 {
+        .header {
+            text-align: center;
+            padding: 120px 20px 50px;
+        }
+
+        .header h1 {
             font-size: 3rem;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
-                         0 0 10px rgba(255, 255, 255, 0.5),
-                         0 0 20px rgba(255, 255, 255, 0.6);
+            color: var(--accent-color);
+            margin-bottom: 10px;
         }
 
-        .content {
-            padding: 20px;
+        .header p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .reasons {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            text-align: left;
-            overflow: hidden;
-            max-width: 500px;
+            gap: 30px;
         }
 
-        .img {
-            width: 100%;
-            max-width: 400px;
+        .reason {
+            background-color: var(--bg-medium);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .reason h2 {
+            font-size: 1.5rem;
+            color: var(--highlight-color);
+            margin-bottom: 10px;
+        }
+
+        .reason p {
+            font-size: 1rem;
+            color: #dddddd;
+        }
+
+        /* Call-to-Action Section */
+        .cta {
+            text-align: center;
+            background-color: var(--bg-dark);
+            margin-top: 55px;
+            padding-top: 20px;
+            padding-bottom: 20px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            gap: 20px;
         }
 
-        .img1 {
-            margin-top: 30px;
-            border-radius: 170px;
-            height: auto;
-            object-fit: cover;
+        .cta h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
         }
 
-        /* Responsive layout and image sizing from 601px upwards */
-        @media (min-width: 601px) {
-            .container2 {
-                flex-wrap: nowrap;
-                align-items: center;
-            }
-
-            .content {
-                order: 1;
-                flex: 0 0 50%;
-                text-align: left;
-                max-width: 500px;
-            }
-
-            .img {
-                order: 2;
-                flex: 0 0 50%;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-            }
-
-            .img1 {
-                transition: width 0.3s ease, border-radius 0.3s ease;
-            }
+        .cta p {
+            font-size: 1rem;
+            color: #cccccc;
+            max-width: 600px;
+            text-align: center;
         }
 
-        @media (max-width: 600px) {
-            .img1{
-                width: 60%;
-                border-radius: 125px;
-            }
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
         }
 
-        @media (min-width: 601px) and (max-width: 800px) {
-            .img1 {
-                width: 70%;
-                border-radius: 140px;
-            }
+        .cta .a1 {
+            padding: 10px 20px;
+            color: black;
+            background-color: var(--highlight-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: inline-block;
         }
 
-        @media (min-width: 801px) {
-            .img1 {
-                width: 80%;
-                border-radius: 160px;
+        .a2 {
+            padding: 5px 10px;
+            background-color: var(--accent-color);
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .cta .a1:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .a2:hover{
+            background-color: var(--highlight-color);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .reason h2 {
+                font-size: 1.2rem;
             }
         }
 
@@ -219,157 +246,91 @@
             }
         }
 
+        @media (max-width: 420px) {
+            .cta {
+                margin-top: 0px !important;
+                text-align: center !important;
+                background-color: var(--bg-dark) !important;
+                padding-top: 20px !important;
+                padding-bottom: 20px !important;
+            }
 
+            .cta h2 {
+                font-size: 1.5rem !important;
+            }
 
-        .exp {
-            padding-top: 80px;
-            max-width: 770px;
-            margin: 0 auto;
-            background-color: black;
-            height: 100vh;
+            .cta p {
+                font-size: 0.9rem !important;
+            }
         }
 
-        .p1, .p2 {
-            color: rgb(188, 181, 181);
-        }
-
-        .journey-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            padding-left: 20px;
-        }
-
-        .journey-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: var(--bg-dark);
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-            color: rgb(203, 203, 203);
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        .journey-content a, .p1 a {
-            color: var(--accent-color);
+        .prs{
             text-decoration: underline;
+            color: var(--accent-color);
         }
-
-        .experience-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    background-color: var(--bg-dark);
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-}
-
-.experience-item {
-    background-color: var(--bg-medium);
-    border-radius: 10px;
-    padding: 20px;
-    color: rgb(203, 203, 203);
-    text-align: left;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.experience-item:hover {
-    transform: translateY(-10px);
-}
-
-.experience-icon {
-    font-size: 2rem;
-    color: var(--accent-color);
-    margin-bottom: 10px;
-}
-
-.experience-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--accent-color);
-}
-
-.experience-item p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <div class="taskbar">
         <div class="taskbar-logo">
             RP
         </div>
         <div class="taskbar-menu">
-            <div class="taskbar-menu-item" id="home" onclick="home()">Home</div>
-            <div class="taskbar-menu-item1" id="about">About</div>
-            <div class="taskbar-menu-item" id="reasons" onclick="reasons()">Reasons</div>
+            <div class="taskbar-menu-item" onclick="home()">Home</div>
+            <div class="taskbar-menu-item" onclick="about()">About</div>
+            <div class="taskbar-menu-item1">Reasons</div>
         </div>
-    </div>  
-
-    <div class="container2"> 
-        <div class="content">
-            <h1 class="hr">About Me</h1><br>
-            <p class="p1">
-                I'm Rajendra Pasha Rachim, also known as Pasha. I am a student at SMA Triguna Utama 
-                Syarif Hidayatullah. I started learning to code in March 2024 on <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>.
-                The first programming language I learned was JavaScript (after learning HTML and CSS). Currently, I am learning to become a full-stack developer and 
-                plan to explore Machine Learning and Software Engineering in the future.
-            </p>        
-        </div>
-
-        <div class="img">
-            <img class="img1" src="me.jpeg" alt="Profile Picture">
-        </div>   
     </div>
 
-    <div class="exp">
-        <h1 class="journey-title">My Journey</h1>
-        <div class="journey-content">
-            <p class="p2">
-                I started learning coding in March 2024 on <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a> 
-                after watching a short video about someone who became a software engineer starting on that platform. 
-                I've been interested in coding since 2022, but I didn't fully commit to learning it until March 2024. 
-                I began with the basics like HTML and CSS, and then moved on to JavaScript, as it's often recommended as a beginner-friendly 
-                programming language. Originally, my goal was to become a software engineer, but after diving into web development, 
-                I decided to focus on becoming a full-stack developer first. Once I gain enough experience, I plan to take my next steps 
-                into the software engineering market.
+    <!-- Header Section -->
+    <section class="header" style="max-width: 900px; margin: 0 auto;">
+        <h1>Reasons to Code</h1>
+        <p style="text-align: left;">Coding is more than just a skill; it’s a tool to create, innovate, 
+            and solve real-world problems. <a class="prs">Here’s why I code</a> and why you should, too.</p>
+    </section>
+
+    <!-- Reasons Section -->
+    <section class="reasons" style="max-width: 900px;">
+        <div class="reason">
+            <h2>1. Problem-Solving</h2>
+            <p>Coding teaches you how to approach complex problems and break them into manageable pieces, making you a better thinker in every aspect of life.</p>
+        </div>
+        <div class="reason">
+            <h2>2. Creativity</h2>
+            <p>Coding allows you to bring ideas to life, whether it’s designing a website, building an app, or developing a game.</p>
+        </div>
+        <div class="reason">
+            <h2>3. High Demand</h2>
+            <p>Tech skills are highly sought after, opening up career opportunities in nearly every industry.</p>
+        </div>
+        <div class="reason">
+            <h2>4. Lifelong Learning</h2>
+            <p>Technology evolves constantly, meaning there’s always something new to learn and explore in coding.</p>
+        </div>
+        <div class="reason">
+            <h2>5. Hobby</h2>
+            <p>Coding is a rewarding hobby for those who enjoy solving problems and creating new things. As someone who also codes in my spare time, I find it a great way to 
+                challenge myself and learn new skills. It's a fulfilling pursuit that blends creativity with problem-solving.
             </p>
         </div>
-
-        <div class="experience-item">
-            <div class="experience-icon">&#x1F4C8;</div>
-            <h3>Collaborative Projects</h3>
-            <p>Collaborated with cross-functional teams, helping to build and optimize features for various client projects.</p>
+    </section>
+    <section class="cta">
+        <h2>Start Your Coding Journey</h2>
+        <p>Take the first step toward becoming a coder and exploring endless possibilities.</p>
+        <div class="cta-buttons">
+            <a class="a1" href="https://www.freecodecamp.org/" target="_blank">Get Started</a>
+            <a class="a2" href="https://roadmap.sh/">Unsure about your career path? Check it here</a>
         </div>
-
-        <div class="experience-item">
-            <div class="experience-icon">&#x1F50D;</div> 
-            <h3>Problem-Solving & Debugging</h3>
-            <p>Worked on debugging code and enhancing the functionality of websites and applications by identifying performance bottlenecks.</p>
-        </div>
-        <div class="experience-item">
-            <div class="experience-icon">&#x1F4BB;</div>
-            <h3>Fullstack Developer</h3>
-            <p>Fullstack Developer intern at PT. lapanca Jaya Bersama for 2 months</p>
-        </div>
-    </div>
-
+    
 </body>
-<script>
-    function home() {
-        window.location.href = '../index.html';
-    }
+    <script>
+        function home() {
+            window.location.href = '../index.html';
+        }
 
-    function reasons() {
-        window.location.href = './reasons.html';
-    }
-</script>
+        function about() {
+            window.location.href = './about.html';
+        }
+    </script>
 </html>
