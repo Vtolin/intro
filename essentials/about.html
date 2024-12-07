@@ -256,6 +256,50 @@
             color: var(--accent-color);
             text-decoration: underline;
         }
+
+        .experience-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    background-color: var(--bg-dark);
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.experience-item {
+    background-color: var(--bg-medium);
+    border-radius: 10px;
+    padding: 20px;
+    color: rgb(203, 203, 203);
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+}
+
+.experience-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.experience-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.experience-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
     </style>
 </head>
 <body>
@@ -298,6 +342,23 @@
                 I decided to focus on becoming a full-stack developer first. Once I gain enough experience, I plan to take my next steps 
                 into the software engineering market.
             </p>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-icon">&#x1F4C8;</div>
+            <h3>Collaborative Projects</h3>
+            <p>Collaborated with cross-functional teams, helping to build and optimize features for various client projects.</p>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-icon">&#x1F50D;</div> 
+            <h3>Problem-Solving & Debugging</h3>
+            <p>Worked on debugging code and enhancing the functionality of websites and applications by identifying performance bottlenecks.</p>
+        </div>
+        <div class="experience-item">
+            <div class="experience-icon">&#x1F4BB;</div>
+            <h3>Fullstack Developer</h3>
+            <p>Fullstack Developer intern at PT. lapanca Jaya Bersama for 2 months</p>
         </div>
     </div>
 
