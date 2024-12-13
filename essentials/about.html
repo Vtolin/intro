@@ -104,6 +104,37 @@
                          0 0 20px rgba(255, 255, 255, 0.6);
         }
 
+        
+        .btn {
+            background: rgba(0, 0, 0, 0.2); /* Subtle background using accent color */
+            border: 1px solid var(--accent-color);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-color);
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                 0 0 10px rgba(255, 255, 255, 0.5),
+                 0 0 20px rgba(255, 255, 255, 0.6);
+            margin-top: 50px;
+            margin-left: 20px;
+            margin-bottom: 25px;
+            display: block;
+            max-width: 300px;
+        }
+
+        .btn:hover {
+            background: rgba(187, 134, 252, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(187, 134, 252, 0.5);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+            background: rgba(187, 134, 252, 0.3);
+        }
         .content {
             padding: 20px;
             display: flex;
@@ -187,6 +218,10 @@
         }
 
         @media (max-width: 600px) {
+            .btn{
+                font-size: 1.5rem;
+            }
+
             .taskbar {
                 padding: 0 10px;
             }
@@ -201,6 +236,9 @@
         }
 
         @media (max-width: 384px) {
+            .btn{
+                font-size: 1rem;
+            }
 
             .taskbar {
                 padding: 0 10px;
@@ -226,7 +264,7 @@
             max-width: 770px;
             margin: 0 auto;
             background-color: black;
-            height: 100vh;
+            min-height: calc(100vh - 190px);
         }
 
         .p1, .p2 {
@@ -288,6 +326,18 @@
     line-height: 1.6;
 }
 
+.experienceParent {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.show {
+    max-height: 500px; /* Adjust this value to suit the content height */
+    opacity: 1;
+}
+
     </style>
 </head>
 <body>
@@ -333,30 +383,31 @@
             </p>
             
         </div>
-        <h1 style='padding-top: 90px; padding-left: 20px; padding-bottom: 15px;'>
+
+        <button onclick="show()" class="btn">
             Experience
-        </h1>
+        </button>
+    <div class="experienceParent">
+
         <div class="experience-item">
             <div class="experience-icon">&#x1F4BB;</div>
             <h3>Full Stack Developer</h3>
             <p>Full Stack Developer intern at PT. Lapanca for 2 months</p>
         </div>
-        
         <div class="experience-item">
             <div class="experience-icon">&#x1F4C8;</div>
             <h3>Self Made Projects</h3>
             <p>Transformed self-initiated concepts into reality by developing intuitive features and creating user-centric experiences for a diverse audience.</p>
         </div>
 
-        <div class="experience-item">
-            <div class="experience-icon">&#x1F50D;</div> 
-            <h3>Problem-Solving & Debugging</h3>
-            <p>Worked on debugging code and enhancing the functionality of my websites by identifying performance bottlenecks.</p>
-        </div>
+    </div>
+
     </div>
 
 </body>
 <script>
+    const exp = document.querySelector('.experienceParent')
+
     function home() {
         window.location.href = '../index.html';
     }
@@ -364,5 +415,16 @@
     function reasons() {
         window.location.href = './reasons.html';
     }
+
+    function show() {
+    exp.classList.toggle('show');
+    
+    if (exp.classList.contains('show')) {
+        setTimeout(() => {
+            exp.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }, 250);
+    }
+}
+
 </script>
 </html>
