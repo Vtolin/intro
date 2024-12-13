@@ -34,7 +34,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: var(--bg-medium);
+            background-color: black;
             color: var(--text-color);
             overflow-y: scroll;
             line-height: 1.6;
@@ -92,7 +92,7 @@
             padding-top: 80px;
             display: flex;
             gap: 30px;
-            max-width: 770px;
+            max-width: 1000px;
             margin: 0 auto;
             flex-wrap: wrap;
         }
@@ -186,6 +186,12 @@
             }
         }
 
+        @media (min-width: 1050px) {
+            .btn{
+                margin-left: 0px;
+            }
+        }
+
         @media (max-width: 600px) {
             .img1{
                 width: 57%;
@@ -261,7 +267,7 @@
 
         .exp {
             padding-top: 80px;
-            max-width: 770px;
+            max-width: 1000px;
             margin: 0 auto;
             background-color: black;
             min-height: calc(100vh - 190px);
