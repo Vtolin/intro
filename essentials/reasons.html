@@ -91,6 +91,7 @@
             font-size: 3rem;
             color: var(--accent-color);
             margin-bottom: 10px;
+            transition: all 300ms ease-in-out;
         }
 
         .header p {
@@ -214,6 +215,10 @@
         }
 
         @media (max-width: 600px) {
+            .header h1{
+                font-size: 2.2rem;
+            }
+
             .taskbar {
                 padding: 0 10px;
             }
@@ -228,6 +233,9 @@
         }
 
         @media (max-width: 384px) {
+            .header h1{
+                font-size: 1.7rem;
+            }
 
             .taskbar {
                 padding: 0 10px;
@@ -284,14 +292,14 @@
     </div>
 
     <!-- Header Section -->
-    <section class="header" style="max-width: 900px; margin: 0 auto;">
+    <section class="header">
         <h1>Reasons to Code</h1>
         <p style="text-align: left;">Coding is more than just a skill; it’s a tool to create, innovate, 
             and solve real-world problems. <a class="prs">Here’s why I code</a> and why you should, too.</p>
     </section>
 
     <!-- Reasons Section -->
-    <section class="reasons" style="max-width: 900px;">
+    <section class="reasons">
         <div class="reason">
             <h2>1. Problem-Solving</h2>
             <p>Coding teaches you how to approach complex problems and break them into manageable pieces, making you a better thinker in every aspect of life.</p>
