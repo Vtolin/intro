@@ -140,9 +140,9 @@ body {
 }
 
 .profile-content {
+  max-width: 100%;
   text-align: left;
   flex-grow: 1;
-  max-width: 100%;
 }
 
 .about-section {
@@ -432,7 +432,8 @@ body {
     </div>
 
     <script>
-      const purposeBtn = document.querySelector('.purpose-btn')
+
+const purposeBtn = document.querySelector('.purpose-btn')
 purposeBtn.textContent = 'Show'
 
 // Event listener for the Purpose button
@@ -460,7 +461,7 @@ function togglePurpose() {
 
 function showSection(sectionId) {
     const sections = document.querySelectorAll('.section');
-    const selectedSection = document.getElementById(sectionId);
+    const selectedSection = document.getElementById(sectionId)
 
     sections.forEach(section => {
         if (section === selectedSection) {
@@ -469,6 +470,11 @@ function showSection(sectionId) {
             section.classList.remove('active'); // Close other sections
         }
     });
+    if(selectedSection.classList.contains('active')) {
+    setTimeout(() => {
+      selectedSection.scrollIntoView({behavior: 'smooth', block: 'end'})
+    }, 150)
+  }
 }
 
 function about() {
