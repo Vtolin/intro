@@ -3,487 +3,420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajendra Pasha - Personal Website</title>
+    <title>Personal Website</title>
     <style>
-     :root {
-  --bg-dark: #121212;
-  --bg-medium: #090909;
-  --bg-light: #333;
-  --text-color: #ffffff;
-  --accent-color: #BB86FC;
-     }
+        :root {
+            --bg-dark: #121212;
+            --bg-medium: #090909;
+            --bg-light: #333;
+            --text-color: #ffffff;
+            --accent-color: #BB86FC;
+        }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: black;
-  color: var(--text-color);
-  line-height: 1.6;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-::-webkit-scrollbar {
-  width: 5px;
-  background-color: white;
-}
+        ::-webkit-scrollbar {
+            width: 5px;
+            background-color: white;
+        }
 
-::-webkit-scrollbar-button{
-  display: none;
-}
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
 
-::-webkit-scrollbar-thumb{
-  background-color: black;
-}
+        ::-webkit-scrollbar-thumb {
+            background-color: black;
+        }
 
-.taskbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background-color: rgba(33, 33, 33, 0.5); 
-  backdrop-filter: blur(5px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
-}
+        .taskbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: rgba(33, 33, 33, 0.5);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
 
-.taskbar-logo {
-  color: var(--accent-color);
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+        .taskbar-logo {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-.taskbar-menu {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+        .taskbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-.taskbar-menu-item, .taskbar-menu-item1 {
-  position: relative;
-  color: var(--text-color);
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+        .taskbar-menu-item, .taskbar-menu-item1 {
+            position: relative;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.taskbar-menu-item:hover {
-  background-color: #352f3b;
-  cursor: pointer;
-}
+        .taskbar-menu-item:hover {
+            background-color: #352f3b;
+        }
 
-.taskbar-menu-item1 {
-  background-color: rgb(113, 85, 148);
-  border-radius: 6px;
-}
+        .taskbar-menu-item1 {
+            background-color: rgb(113, 85, 148);
+            border-radius: 6px;
+        }
 
-.container2 {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 60px 5px 0 0;
-}
+        .container2 {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 5px 0 0;
+        }
 
-/*.header-image {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-}*/
+        .welcomeTxt {
+            color: var(--text-color);
+            font-size: 2.5em;
+            font-weight: bold;
+            width: 100%;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 90%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4),
+                         0 0 10px var(--accent-color),
+                         0 0 20px rgba(187, 134, 252, 0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.profile-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--bg-medium);
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, visibility 0s 0.3s, max-height 0.3s ease;
-}
+        .profile-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: var(--bg-medium);
+            padding: 20px;
+            margin: 0;
+            margin-bottom: -40px;
+            border-radius: 10px;
+            gap: 20px;
+            opacity: 0;
+            visibility: hidden;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
 
-.profile-section.visible {
-  opacity: 1;
-  visibility: visible;
-  max-height: 1000px;
-  transition: opacity 0.3s ease, visibility 0s 0s, max-height 0.3s ease;
-}
+        .profile-section.visible {
+            opacity: 1;
+            visibility: visible;
+            max-height: 1000px;
+            margin: 15px 0;
+        }
 
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid var(--accent-color);
-  transition: all 0.3s ease;
-}
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+        }
 
-.profile-name {
-  color: var(--accent-color);
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-}
+        .profile-name {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
 
-.profile-content {
-  max-width: 100%;
-  text-align: left;
-  flex-grow: 1;
-}
+        .profile-content {
+            max-width: 100%;
+            text-align: left;
+            flex-grow: 1;
+        }
 
-.about-section {
-  background-color: var(--bg-medium);
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  transition: opacity 0.3s ease, visibility 0s 0.3s;
-  margin-top: -50px;
-}
+        .control-btn, .purpose-btn {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: var(--bg-medium);
+            color: var(--text-color);
+            border: 1px solid var(--bg-medium);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
 
-.about-section.expanded {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease, visibility 0s 0s;
-  margin-top: 20px;
-}
+        .purpose-btn {
+            margin-bottom: 5px;
+        }
 
-.purpose-btn {
-  display: block;
-  width: 200px;
-  margin: 20px auto;
-  padding: 10px;
-  background-color: var(--bg-light);
-  color: var(--text-color);
-  border: 1px solid var(--accent-color);
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+        .control-btn:hover, .purpose-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-dark);
+            border: 1px solid white;
+        }
 
-.purpose-btn:hover {
-  background-color: var(--accent-color);
-  color: var(--bg-dark);
-}
+        .help {
+            margin-top: 5px;
+            padding-left: 10px;
+        }
 
-.profile-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: var(--bg-medium);
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-  gap: 20px;
-}
+        .section {
+            opacity: 0;
+            max-height: 0;
+            background-color: var(--bg-medium);
+            margin-top: -10px;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: all 300ms ease-in-out;
+        }
 
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 0;
-  border: 3px solid var(--accent-color);
-}
+        .section.active {
+            opacity: 1;
+            max-height: 1000px;
+        }
 
-.profile-name {
-  color: var(--accent-color);
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
+        .dvs {
+            margin-left: 10px;
+            padding: 10px;
+        }
 
-.about-section {
-  background-color: var(--bg-medium);
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
+        .p1 {
+            color: green;
+        }
 
-.about-title {
-  color: var(--accent-color);
-}
+        .logos {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            vertical-align: middle;
+            transition: transform 0.2s ease;
+        }
 
-.control-btn {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  margin: 10px auto;
-  padding: 10px;
-  background-color: var(--bg-medium);
-  color: var(--text-color);
-  border: 1px solid var(--bg-medium);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
+        .logos:hover {
+            transform: scale(1.1);
+        }
 
-.control-btn:hover {
-  background-color: var(--accent-color);
-  color: var(--bg-dark);
-  border: 1px solid white;
-}
+        li {
+            list-style: none;
+            margin: 5px 0;
+        }
 
-.section{
-  opacity: 0;
-  max-height: 0px;
-  background-color: var(--bg-medium);
-  margin-top: -10px;
-  overflow: hidden;
-  border-radius: 10px;
-  transition: all 300ms ease-in-out;
-}
+        @media (max-width: 600px) and (min-width: 384px) {
+            .welcomeTxt {
+                font-size: 1.7rem !important;
+            }
 
-.section.active {
-  opacity: 1;
-  max-height: 1000px;
-  transition: all 300ms ease-in-out;
-}
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
 
-.dvs{
-  margin-left: 10px;
-}
+            .profile-name {
+                text-align: center;
+            }
 
-@media (max-width: 600px) and (min-width: 384px) {
-  .welcomeTxt{
-    font-size: 1.7rem !important;
-  }
+            .profile-content {
+                margin-top: 15px;
+            }
 
-  .profile-section {
-      flex-direction: column;
-      text-align: center;
-  }
+            .taskbar-menu {
+                gap: 10px;
+            }
 
-  .profile-name{
-    text-align: center;
-  }
+            .taskbar {
+                padding: 0 10px;
+            }
 
-  .profile-content {
-      margin-top: 15px;
-  }
+            .taskbar-menu-item1, .taskbar-menu-item {
+                font-size: 0.8rem;
+            }
 
-  .taskbar-menu {
-      gap: 10px;
-  }
-  
-  .taskbar {
-      padding: 0 10px;
-  }
+            .logos {
+                width: 25px;
+                height: 25px;
+            }
+        }
 
-  .taskbar-menu-item1, .taskbar-menu-item {
-    font-size: 0.8rem;
-  }
-}
+        @media (max-width: 384px) {
+            .welcomeTxt {
+                font-size: 1.2rem !important;
+            }
 
-@media (max-width: 384px) {
-  .welcomeTxt{
-    font-size: 1.2rem !important;
-}
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
 
-  .profile-section {
-    flex-direction: column;
-    text-align: center;
-}
+            .profile-content {
+                text-align: center;
+                margin-top: 15px;
+            }
 
-.profile-content {
-    text-align: center;
-    margin-top: 15px;
-}
+            .taskbar-menu {
+                gap: 10px;
+            }
 
-.taskbar-menu {
-    gap: 10px;
-}
+            .taskbar {
+                padding: 0 10px;
+            }
 
-.taskbar {
-    padding: 0 10px;
-}
+            .taskbar-menu-item1, .taskbar-menu-item {
+                font-size: 0.6rem;
+            }
 
-.taskbar-menu-item1, .taskbar-menu-item {
-  font-size: 0.6rem;
-}
-.taskbar-logo{
-  font-size: 2.2rem;
-}
-}
+            .taskbar-logo {
+                font-size: 2.2rem;
+            }
 
-@media (min-width: 600px) {
-  .welcomeTxt:hover{
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7),
-              0 0 15px var(--accent-color),
-              0 0 30px rgba(187, 134, 252, 1);
-  }
-}
+            .logos {
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+            }
+        }
 
-.p1{
-  color: green;
-}
-
-.welcomeTxt {
-  color: var(--text-color);
-  font-size: 2.5em;
-  font-weight: bold;
-  width: 100%;
-  padding: 50px 20px;
-  text-align: center;
-  border-radius: 10px;
-  margin: 20px auto;
-  max-width: 90%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4),
-               0 0 10px var(--accent-color),
-               0 0 20px rgba(187, 134, 252, 0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        @media (min-width: 600px) {
+            .welcomeTxt:hover {
+                transform: scale(1.1);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7),
+                           0 0 15px var(--accent-color),
+                           0 0 30px rgba(187, 134, 252, 1);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-      <div class="taskbar">
-        <div class="taskbar-logo">
-            RP
+        <div class="taskbar">
+            <div class="taskbar-logo">
+                RP
+            </div>
+            <div class="taskbar-menu">
+                <div class="taskbar-menu-item1" id="home">Home</div>
+                <div class="taskbar-menu-item" id="about" onclick="about()">About</div>
+                <div class="taskbar-menu-item" id="reasons" onclick="reasons()">Reasons</div>
+            </div>
         </div>
-        <div class="taskbar-menu">
-            <div class="taskbar-menu-item1" id="home">Home</div>
-           <div class="taskbar-menu-item" id="about" onclick="about()">About</div>
-            <div class="taskbar-menu-item" id="reasons" onclick="reasons()">Reasons</div>
-        </div>
-      </div>
     </div>
 
     <div class="container2">
-        <!-- <img src="hehe.jpg" alt="Header Image" class="header-image"> -->
-         <h1 class="welcomeTxt">Architecting Digital Experiences</h1>
+        <h1 class="welcomeTxt">Architecting Digital Experiences</h1>
 
-        <button class="purpose-btn">Show</button>
+        <button class="purpose-btn">Overview</button>
 
         <div class="profile-section">
-            <img src="niya.jpg" alt="Profile Picture" class="profile-pic">
+            <img src="./assets/niya.jpg" alt="Profile Picture" class="profile-pic">
             <div class="profile-content">
                 <h1 class="profile-name">Purpose</h1>
                 <p>Hey, I'm Pasha. This is my first Personal website, and I made it with all the coding skills I've learned over the past few months. I know it's probably not the prettiest and may have some bugs, but I'm still a beginner and I'm still learning. I made this on a smartphone, so it's not the best website I've made because it's harder to code here.</p>
-                <p class="p1">//The pfp i use is my wife</p>
+                <p class="p1">//The pfp i use is my wife :3</p>
                 <p class="p1">//I did the rest of the code on my laptop</p>
             </div>
         </div>
 
-        <div class="about-section">
-            <h2 class="about-title">Quick Facts</h2>
-            <div class="about-details">
-                <p>Nickname: Pasha;</p>
-                <p>Age: 17;</p>
-                <p>Hobbies: Programming, Photography, Learning New Things;</p>
-                <p>Favorite Food: Mom's Cooking;</p>
-                <p>Daily Driver: Samsung S10 & LG G5 SE;</p>
-                <p>Workstation: Dell Inspiron 14-3467 i7-7500u;</p>
-            </div>
-        </div>
-        
-        <div class="exp">
-          <h1></h1>
+        <div class="help">
+            <h2>I can help you with</h2>
         </div>
 
         <button class="control-btn" onclick="showSection('projects')">Projects</button>
         <div id="projects" class="section">
-          <div class="dvs">
-            <h2>Projects</h2>
-            <p>Here are some of the projects I've been working on:</p>
-            <ul>
-                <li>Personal Website (Current)</li>
-                <li>Photography Portfolio</li>
-                <li>Coding Practice Projects</li>
-            </ul>
-          </div>
-        </div>
-
-        <button class="control-btn" onclick="showSection('contact')">Contact</button>
-        <div id="contact" class="section">
-          <div class="dvs">
-            <h2>Contact</h2>
-            <ul>
-                <li>Email: manusiamk14ebr@gmail.com</li>
-                <li>GitHub: @Vtolin</li>
-                <li>Instagram: @manx100ultra</li>
-            </ul>
+            <div class="dvs">
+                <h2>Projects</h2>
+                <p>Here are some of the projects I've been working on:</p>
+                <ul>
+                    <li>Personal Website (Current)</li>
+                    <li>Photography Portfolio</li>
+                    <li>Coding Practice Projects</li>
+                </ul>
             </div>
         </div>
 
         <button class="control-btn" onclick="showSection('more-info')">More Info</button>
         <div id="more-info" class="section">
-          <div class="dvs">
-            <h2>Overview</h2>
-            <p>I'm passionate about learning new technologies and exploring the world of programming. My goal is to continuously improve my skills and create meaningful projects that can make a difference.</p>
-            <p>I aslo love photography and I'm always looking and learning for new ways to combine my interests and learn new things.</p>
+            <div class="dvs">
+                <h2>Summary</h2>
+                <p>I'm passionate about learning new technologies and exploring the world of programming. My goal is to continuously improve my skills and create meaningful projects that can make a difference.</p>
+                <p>I also love photography and I'm always looking and learning for new ways to combine my interests and learn new things.</p>
             </div>
+        </div>
+
+        <div class="dvs">
+            <h2>Contact</h2>
+            <ul>
+                <li><img src="assets/gmailLoo-removebg-preview.png" alt="Gmail Logo" class="logos"> manusiamk14ebr@gmail.com</li>
+                <a href="https://github.com/vtolin" target="_blank" style="text-decoration: none; color: white;">
+                    <li><img src="assets/githubLogo.jpg" alt="Github Logo" class="logos"> @Vtolin</li>
+                </a>
+                <a href="https://www.instagram.com/manx100ultra/" target="_blank" style="text-decoration: none; color: white;">
+                    <li><img src="assets/ig_logo-removebg-preview.png" alt="insta Logo" class="logos"> @manx100ultra</li>
+                </a>
+            </ul>
         </div>
     </div>
 
     <script>
-
-const purposeBtn = document.querySelector('.purpose-btn')
-purposeBtn.textContent = 'Show'
-
-// Event listener for the Purpose button
-purposeBtn.addEventListener('click', togglePurpose)
-
-function togglePurpose() {
-    const profileSection = document.querySelector('.profile-section')
-    const profilePic = document.querySelector('.profile-pic')
-    const profileName = document.querySelector('.profile-name')
-    const aboutSection = document.querySelector('.about-section')
-    const purposeBtn = document.querySelector('.purpose-btn')
-
-    // Toggle visibility for profile section and about section
-    const isVisible = profileSection.classList.contains('visible')
-
-    // Toggle visibility and expand/collapse sections
-    profileSection.classList.toggle('visible', !isVisible)
-    profilePic.classList.toggle('visible', !isVisible)
-    profileName.classList.toggle('visible', !isVisible)
-    aboutSection.classList.toggle('expanded', !isVisible)
-
-    // Update the button text
-    purposeBtn.textContent = isVisible ? 'Show' : 'Hide'
-}
-
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    const selectedSection = document.getElementById(sectionId)
-
-    sections.forEach(section => {
-        if (section === selectedSection) {
-            section.classList.toggle('active'); // Toggle selected section
-        } else {
-            section.classList.remove('active'); // Close other sections
+        const purposeBtn = document.querySelector('.purpose-btn');
+        
+        function togglePurpose() {
+            const profileSection = document.querySelector('.profile-section');
+            const isVisible = profileSection.classList.contains('visible');
+            
+            profileSection.classList.toggle('visible');
+            purposeBtn.textContent = isVisible ? 'Overview' : 'Hide';
         }
-    });
-    if(selectedSection.classList.contains('active')) {
-    setTimeout(() => {
-      selectedSection.scrollIntoView({behavior: 'smooth', block: 'end'})
-    }, 150)
-  }
-}
 
-function about() {
-  window.location.href = 'essentials/about.html'
-}
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            const selectedSection = document.getElementById(sectionId);
 
-function reasons() {
-  window.location.href = 'essentials/reasons.html'
-}
+            sections.forEach(section => {
+                if (section === selectedSection) {
+                    section.classList.toggle('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+
+            if (selectedSection.classList.contains('active')) {
+                setTimeout(() => {
+                    selectedSection.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                }, 150);
+            }
+        }
+
+        function about() {
+            window.location.href = 'essentials/about.html';
+        }
+
+        function reasons() {
+            window.location.href = 'essentials/reasons.html';
+        }
+
+        purposeBtn.addEventListener('click', togglePurpose);
     </script>
 </body>
 </html>
