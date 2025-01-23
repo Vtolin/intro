@@ -1,0 +1,379 @@
+:root {
+  --bg-dark: #121212;
+  --bg-medium: #090909;
+  --bg-light: #333;
+  --text-color: #ffffff;
+  --accent-color: #BB86FC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #111111;
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+/* ORIGINAL TASKBAR STYLES - UNTOUCHED */
+.taskbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(33, 33, 33, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.taskbar-logo {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.taskbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.taskbar-menu-item, .taskbar-menu-item1 {
+  position: relative;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.taskbar-menu-item:hover {
+  background-color: #352f3b;
+}
+
+.taskbar-menu-item1 {
+  background-color: rgb(113, 85, 148);
+  border-radius: 6px;
+}
+
+/* New Modern Styles */
+.container2 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px 40px;
+  flex: 1;
+}
+
+.welcomeTxt {
+color: var(--text-color);
+font-size: 2.6em;
+font-weight: bold;
+width: 100%;
+padding: 50px 20px;
+text-align: center;
+margin: 20px auto;
+max-width: 90%;
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4),
+       0 0 10px var(--accent-color),
+       0 0 20px rgba(187, 134, 252, 0.7);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-section {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 40px;
+  margin: 32px 0;
+  display: flex;
+  gap: 40px;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #2a2a2a;
+}
+
+.profile-section.visible {
+  margin-bottom: 155px;
+  margin-top: 15px;
+  opacity: 1;
+  visibility: visible;
+  max-height: 1000px;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 140px;
+  object-fit: cover;
+  border: 5px solid var(--accent-color);
+  margin-top: 30px;
+}
+
+.profile-content {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.purpose-btn, .control-btn {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 16px 24px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  margin: 12px 0;
+  transition: all 0.2s ease;
+}
+
+.purpose-btn:hover, .control-btn:hover {
+  background: #2a2a2a;
+  transform: translateY(-2px);
+}
+
+.help {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 20px;
+  margin-top: -125px;
+}
+
+.help h2 {
+  margin-top: -25px;
+  margin-left: -20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.section {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.section.active {
+  opacity: 1;
+  max-height: 1000px;
+  padding: 40px;
+  margin: 16px 0;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.section p {
+  color: #aaa;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.section ul {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.section ul li {
+  color: #aaa;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  padding-left: 24px;
+  position: relative;
+}
+
+.section ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+/* Modern Footer */
+footer {
+  background: #1a1a1a;
+  padding: 24px 0;
+  border-top: 1px solid #2a2a2a;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: #242424;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.social-link:hover {
+  background: #2a2a2a;
+  transform: translateY(-2px);
+}
+
+.logos {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+/* Keeping original media queries */
+@media (max-width: 600px) and (min-width: 385px) {
+  .help h2{
+      font-size: 1.3rem;
+  }
+
+  .welcomeTxt {
+      font-size: 1.7rem !important;
+  }
+  
+  .profile-pic {
+      visibility: hidden;
+      opacity: 0;
+  }
+
+  #p1e {
+      opacity: 0;
+      visibility: hidden;
+  }
+  
+  .profile-section {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .profile-name {
+      text-align: center;
+  }
+
+  .profile-content {
+      margin-top: -175px;
+  }
+
+  .taskbar-menu {
+      gap: 10px;
+  }
+
+  .taskbar {
+      padding: 0 10px;
+  }
+
+  .taskbar-menu-item1, .taskbar-menu-item {
+      font-size: 0.8rem;
+  }
+  
+  #p2e {
+      margin-top: -25px;
+  }
+}
+
+@media (max-width: 384px) {
+  .help h2{
+      font-size: 1rem;
+  }
+
+  .welcomeTxt {
+      font-size: 1.2rem !important;
+  }
+
+  #p2e {
+      margin-top: -25px;
+  }
+
+  #p1e {
+      opacity: 0;
+      visibility: hidden;
+  }
+  
+  .profile-pic {
+      visibility: hidden;
+      opacity: 0;
+  }
+
+  .profile-section {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .profile-content {
+      text-align: center;
+      margin-top: -175px;
+  }
+
+  .taskbar-menu {
+      gap: 10px;
+  }
+
+  .taskbar {
+      padding: 0 10px;
+  }
+
+  .taskbar-menu-item1, .taskbar-menu-item {
+      font-size: 0.6rem;
+  }
+
+  .taskbar-logo {
+      font-size: 2.2rem;
+  }
+}

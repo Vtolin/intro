@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajendra Pasha - Personal Website</title>
+    <link rel="stylesheet" href="../styling/about.css">
+  </head>
+  <body>
+    <div class="taskbar">
+      <div class="taskbar-logo">RP</div>
+      <div class="taskbar-menu">
+        <div class="taskbar-menu-item" id="home" onclick="home()">Home</div>
+        <div class="taskbar-menu-item1" id="about">About</div>
+        <div class="taskbar-menu-item" id="reasons" onclick="reasons()">
+          Reasons
+        </div>
+      </div>
+    </div>
+
+    <div class="container2">
+      <div class="content">
+        <h1 class="hr">About Me</h1>
+        <br />
+        <p class="p1">
+          I'm Rajendra Pasha, also known as Pasha. I am a student at SMA Triguna
+          Utama. I started learning to code in March 2024 on
+          <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a
+          >. The first programming language I learned was JavaScript (after
+          learning HTML and CSS). Currently, I am learning to become a
+          full-stack developer and plan to explore Machine Learning and Software
+          Engineering in the future.
+        </p>
+      </div>
+
+      <div class="img">
+        <img class="img1" src="../assets/me.jpeg" alt="Profile Picture" />
+      </div>
+    </div>
+
+    <div class="exp">
+
+      <h1 class="journey-title">My Journey</h1>
+      <div class="journey-content">
+        <p class="p2">
+          I started learning coding in March 2024 on
+          <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>
+          after watching a short video about someone who became a software
+          engineer starting on that platform. I've been interested in coding
+          since 2022, but I didn't fully commit to learning it until March 2024.
+          I began with the basics like HTML and CSS, and then moved on to
+          JavaScript, as it's often recommended as a beginner-friendly
+          programming language. Originally, my goal was to become a software
+          engineer, but after diving into web development, I decided to focus on
+          becoming a full-stack developer first. Once I gain enough experience,
+          I plan to take my next steps into the software engineering market.
+        </p>
+      </div>
+
+      <h1 class="btn">
+        Experience
+      </h1>
+
+        <div class="experience-item">
+          <div class="experience-icon">&#x1F4BB;</div>
+          <h3>Full Stack Developer</h3>
+          <p>Full Stack Developer intern at PT. Lapanca for 2 months</p>
+        </div>
+        <div class="experience-item">
+          <div class="experience-icon">&#x1F4C8;</div>
+          <h3>Self Made Projects</h3>
+          <p>
+            Transformed self-initiated concepts into reality by developing
+            intuitive features and creating user-centric experiences for a
+            diverse audience.
+          </p>
+        </div>
+
+    </div>
+  </body>
+  <script>
+
+    function home() {
+      window.location.href = "../index.html";
+    }
+
+    function reasons() {
+      window.location.href = "./reasons.html";
+    }
+  </script>
+</html>
