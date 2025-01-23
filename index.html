@@ -4,312 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website</title>
-    <style>
-        :root {
-            --bg-dark: #121212;
-            --bg-medium: #090909;
-            --bg-light: #333;
-            --text-color: #ffffff;
-            --accent-color: #BB86FC;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        ::-webkit-scrollbar {
-            width: 5px;
-            background-color: white;
-        }
-
-        ::-webkit-scrollbar-button {
-            display: none;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: black;
-        }
-
-        .taskbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background-color: rgba(33, 33, 33, 0.5);
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-
-        .taskbar-logo {
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .taskbar-menu {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .taskbar-menu-item, .taskbar-menu-item1 {
-            position: relative;
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .taskbar-menu-item:hover {
-            background-color: #352f3b;
-        }
-
-        .taskbar-menu-item1 {
-            background-color: rgb(113, 85, 148);
-            border-radius: 6px;
-        }
-
-        .container2 {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px 5px 0 0;
-        }
-
-        .welcomeTxt {
-            color: var(--text-color);
-            font-size: 2.5em;
-            font-weight: bold;
-            width: 100%;
-            padding: 50px 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 90%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4),
-                         0 0 10px var(--accent-color),
-                         0 0 20px rgba(187, 134, 252, 0.7);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .profile-section {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            background-color: var(--bg-medium);
-            padding: 20px;
-            margin: 0;
-            margin-bottom: -40px;
-            border-radius: 10px;
-            gap: 20px;
-            opacity: 0;
-            visibility: hidden;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .profile-section.visible {
-            opacity: 1;
-            visibility: visible;
-            max-height: 1000px;
-            margin: 15px 0;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-color);
-        }
-
-        .profile-name {
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
-
-        .profile-content {
-            max-width: 100%;
-            text-align: left;
-            flex-grow: 1;
-        }
-
-        .control-btn, .purpose-btn {
-            display: block;
-            width: 100%;
-            max-width: 100%;
-            margin: 10px auto;
-            padding: 10px;
-            background-color: var(--bg-medium);
-            color: var(--text-color);
-            border: 1px solid var(--bg-medium);
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .purpose-btn {
-            margin-bottom: 5px;
-        }
-
-        .control-btn:hover, .purpose-btn:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-dark);
-            border: 1px solid white;
-        }
-
-        .help {
-            margin-top: 5px;
-            padding-left: 10px;
-        }
-
-        .section {
-            opacity: 0;
-            max-height: 0;
-            background-color: var(--bg-medium);
-            margin-top: -10px;
-            overflow: hidden;
-            border-radius: 10px;
-            transition: all 300ms ease-in-out;
-        }
-
-        .section.active {
-            opacity: 1;
-            max-height: 1000px;
-        }
-
-        .dvs {
-            margin-left: 10px;
-            padding: 10px;
-        }
-
-        .p1 {
-            color: green;
-        }
-
-        .logos {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 10px;
-            vertical-align: middle;
-            transition: transform 0.2s ease;
-        }
-
-        .logos:hover {
-            transform: scale(1.1);
-        }
-
-        li {
-            list-style: none;
-            margin: 5px 0;
-        }
-
-        @media (max-width: 600px) and (min-width: 384px) {
-            .welcomeTxt {
-                font-size: 1.7rem !important;
-            }
-
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-name {
-                text-align: center;
-            }
-
-            .profile-content {
-                margin-top: 15px;
-            }
-
-            .taskbar-menu {
-                gap: 10px;
-            }
-
-            .taskbar {
-                padding: 0 10px;
-            }
-
-            .taskbar-menu-item1, .taskbar-menu-item {
-                font-size: 0.8rem;
-            }
-
-            .logos {
-                width: 25px;
-                height: 25px;
-            }
-        }
-
-        @media (max-width: 384px) {
-            .welcomeTxt {
-                font-size: 1.2rem !important;
-            }
-
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-content {
-                text-align: center;
-                margin-top: 15px;
-            }
-
-            .taskbar-menu {
-                gap: 10px;
-            }
-
-            .taskbar {
-                padding: 0 10px;
-            }
-
-            .taskbar-menu-item1, .taskbar-menu-item {
-                font-size: 0.6rem;
-            }
-
-            .taskbar-logo {
-                font-size: 2.2rem;
-            }
-
-            .logos {
-                width: 20px;
-                height: 20px;
-                margin-right: 5px;
-            }
-        }
-
-        @media (min-width: 600px) {
-            .welcomeTxt:hover {
-                transform: scale(1.1);
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7),
-                           0 0 15px var(--accent-color),
-                           0 0 30px rgba(187, 134, 252, 1);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./styling/style.css">
 </head>
 <body>
+    <!-- Keeping original taskbar structure -->
     <div class="container">
         <div class="taskbar">
             <div class="taskbar-logo">
@@ -333,90 +31,50 @@
             <div class="profile-content">
                 <h1 class="profile-name">Purpose</h1>
                 <p>Hey, I'm Pasha. This is my first Personal website, and I made it with all the coding skills I've learned over the past few months. I know it's probably not the prettiest and may have some bugs, but I'm still a beginner and I'm still learning. I made this on a smartphone, so it's not the best website I've made because it's harder to code here.</p>
-                <p class="p1">//The pfp i use is my wife :3</p>
-                <p class="p1">//I did the rest of the code on my laptop</p>
+                <p id="p1e" class="p1">//The pfp i use is my wife :3</p>
+                <p id="p2e" class="p1">//I did the rest of the code on my laptop</p>
             </div>
         </div>
 
         <div class="help">
-            <h2></h2>
+            <h2>Tools & Frameworks</h2>
+            <div class="tool">
+            </div>
         </div>
 
         <button class="control-btn" onclick="showSection('projects')">Projects</button>
         <div id="projects" class="section">
-            <div class="dvs">
-                <h2>Projects</h2>
-                <p>Here are some of the projects I've been working on:</p>
-                <ul>
-                    <li>Personal Website (Current)</li>
-                    <li>Photography Portfolio</li>
-                    <li>Coding Practice Projects</li>
-                </ul>
-            </div>
+            <h2>Projects</h2>
+            <p>Here are some of the projects I've been working on:</p>
+            <ul>
+                <li>Personal Website (Current)</li>
+                <li>Photography Portfolio</li>
+                <li>Coding Practice Projects</li>
+            </ul>
         </div>
 
         <button class="control-btn" onclick="showSection('more-info')">More Info</button>
         <div id="more-info" class="section">
-            <div class="dvs">
-                <h2>Summary</h2>
-                <p>I'm passionate about learning new technologies and exploring the world of programming. My goal is to continuously improve my skills and create meaningful projects that can make a difference.</p>
-                <p>I also love photography and I'm always looking and learning for new ways to combine my interests and learn new things.</p>
-            </div>
-        </div>
-
-        <div class="dvs">
-            <h2>Contact</h2>
-            <ul>
-                <li><img src="assets/gmailLoo-removebg-preview.png" alt="Gmail Logo" class="logos"> manusiamk14ebr@gmail.com</li>
-                <a href="https://github.com/vtolin" target="_blank" style="text-decoration: none; color: white;">
-                    <li><img src="assets/githubLogo.jpg" alt="Github Logo" class="logos"> @Vtolin</li>
-                </a>
-                <a href="https://www.instagram.com/manx100ultra/" target="_blank" style="text-decoration: none; color: white;">
-                    <li><img src="assets/ig_logo-removebg-preview.png" alt="insta Logo" class="logos"> @manx100ultra</li>
-                </a>
-            </ul>
+            <h2>Summary</h2>
+            <p>I'm passionate about learning new technologies and exploring the world of programming. My goal is to continuously improve my skills and create meaningful projects that can make a difference.</p>
+            <p>I also love photography and I'm always looking and learning for new ways to combine my interests and learn new things.</p>
         </div>
     </div>
 
-    <script>
-        const purposeBtn = document.querySelector('.purpose-btn');
-        
-        function togglePurpose() {
-            const profileSection = document.querySelector('.profile-section');
-            const isVisible = profileSection.classList.contains('visible');
-            
-            profileSection.classList.toggle('visible');
-            purposeBtn.textContent = isVisible ? 'Overview' : 'Hide';
-        }
+    <footer>
+        <div class="footer-content">
+            <a href="https://github.com/vtolin" target="_blank" class="social-link">
+                <img src="assets/githubLogo.jpg" alt="Github Logo" class="logos">
+                GitHub
+            </a>
+            <a href="https://www.instagram.com/manx100ultra/" target="_blank" class="social-link">
+                <img src="assets/ig_logo-removebg-preview.png" alt="Instagram Logo" class="logos">
+                Instagram
+            </a>
+        </div>
+    </footer>
 
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            const selectedSection = document.getElementById(sectionId);
-
-            sections.forEach(section => {
-                if (section === selectedSection) {
-                    section.classList.toggle('active');
-                } else {
-                    section.classList.remove('active');
-                }
-            });
-
-            if (selectedSection.classList.contains('active')) {
-                setTimeout(() => {
-                    selectedSection.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                }, 150);
-            }
-        }
-
-        function about() {
-            window.location.href = 'essentials/about.html';
-        }
-
-        function reasons() {
-            window.location.href = 'essentials/reasons.html';
-        }
-
-        purposeBtn.addEventListener('click', togglePurpose);
+    <script src="./fescript/script.js">
     </script>
 </body>
 </html>
