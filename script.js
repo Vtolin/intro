@@ -28,11 +28,11 @@ function showSection(sectionId) {
     }
 }
 function about() {
-    window.location.href = 'essentials/about.html';
+    //window.location.href = 'essentials/about.html';
 }
 
 function reasons() {
-    window.location.href = 'essentials/reasons.html';
+    //window.location.href = 'essentials/reasons.html';
 }
 // Add this to the end of your existing script section
 const observerOptions = {
