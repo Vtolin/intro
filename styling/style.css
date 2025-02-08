@@ -1,4 +1,4 @@
-  :root {
+        :root {
   --bg-dark: #121212;
   --bg-medium: #090909;
   --bg-light: #333;
@@ -253,28 +253,29 @@ footer {
   gap: 20px;
 }
 
-.footer-content img{
-  width: 40px;
-  height: 40px;
-}
-
 .social-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 24px;
-  background: #242424;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
 }
 
 .social-link:hover {
-  background: #2a2a2a;
-  transform: translateY(-2px);
+     background: #2a2a2a;
+    transform: translateY(-2px);
+}
+
+.logos {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 .tool img{
     width: 75px;
