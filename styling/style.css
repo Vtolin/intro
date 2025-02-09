@@ -281,6 +281,14 @@
       }
       
       @media (max-width: 600px) and (min-width: 385px) {
+        .section h2{
+            font-size: 1.7rem;
+        }
+
+        .section p, .section ul li {
+            font-size: 1rem;
+        }
+
         .footer-content img{
             width: 32px;
             height: 32px;
@@ -339,6 +347,10 @@
       }
       
       @media (max-width: 384px) {
+        .section h2{
+            font-size: 1.4rem;
+        }
+
         .section p, .section ul li {
             font-size: 0.9rem;
         }
