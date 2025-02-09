@@ -8,25 +8,6 @@ function togglePurpose() {
 }
 
 purposeBtn.addEventListener('click', togglePurpose);
-
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    const selectedSection = document.getElementById(sectionId);
-    
-    sections.forEach(section => {
-        if (section === selectedSection) {
-            section.classList.toggle('active');
-        } else {
-            section.classList.remove('active');
-        }
-    });
-    
-    if (selectedSection.classList.contains('active')) {
-        setTimeout(() => {
-            selectedSection.scrollIntoView({ behavior: 'smooth', block: 'end' });
-        }, 150);
-    }
-}
 function about() {
     //window.location.href = 'essentials/about.html';
 }
