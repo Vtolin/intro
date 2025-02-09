@@ -108,7 +108,7 @@
       .profile-section {
         background: #1a1a1a;
         border-radius: 16px;
-        padding: 40px;
+        padding:40px 20px 40px 20px;
         margin: 32px 0;
         display: flex;
         gap: 40px;
@@ -281,6 +281,10 @@
       }
       
       @media (max-width: 600px) and (min-width: 385px) {
+        .profile-content h1{
+            font-size: 1.7rem;
+        }
+
         .section h2{
             font-size: 1.7rem;
         }
@@ -347,6 +351,14 @@
       }
       
       @media (max-width: 384px) {
+        .profile-content h1{
+            font-size: 1.4rem;
+        }
+
+        .profile-content p{
+            font-size: 0.9rem;
+        }
+
         .section h2{
             font-size: 1.4rem;
         }
