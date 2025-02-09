@@ -80,8 +80,7 @@
         background-color: rgb(113, 85, 148);
         border-radius: 6px;
       }
-      
-      /* New Modern Styles */
+
       .container2 {
         width: 100%;
         max-width: 1200px;
@@ -276,8 +275,8 @@
           object-fit: contain;
       }
       .tool img{
-          width: 75px;
-          height: 75px;
+          width: 50px;
+          height: 50px;
       }
       
       @media (max-width: 600px) and (min-width: 385px) {
