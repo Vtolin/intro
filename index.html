@@ -3,76 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
-    <link rel="stylesheet" href="./styling/style.css">
+    <title>Your Name - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d3436;
+            background-color: #0984e3;
+            width: 50px;
+            text-align: center;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2d3436;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0984e3;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #6c5ce7, #0984e3);
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: white;
+            color: #0984e3;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background-color: #ddd;
+            border-radius: 10px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .submit-button {
+            background-color: #0984e3;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #0773c5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #0984e3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="taskbar">
-            <div class="taskbar-logo">
-                RP
-            </div>
-            <div class="taskbar-menu">
-                <div class="taskbar-menu-item1" id="home">Home</div>
-                <div class="taskbar-menu-item" id="about" onclick="about()">About</div>
-                <div class="taskbar-menu-item" id="reasons" onclick="reasons()">Reasons</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container2">
-        <h1 class="welcomeTxt">Architecting Digital Experiences</h1>
-
-        <button class="purpose-btn">Overview</button>
-
-        <div class="profile-section">
-            <img src="./assets/niya.jpg" alt="Profile Picture" class="profile-pic">
-            <div class="profile-content">
-                <h1 class="profile-name">Purpose</h1>
-                <p>Hey, I'm Pasha. This is my first Personal website, and I made it with all the coding skills I've learned over the past few months. I know it's probably not the prettiest and may have some bugs, but I'm still a beginner and I'm still learning. I made this on a smartphone, so it's not the best website I've made because it's harder to code here.</p>
-                <p id="p1e" class="p1">//The pfp i use is my wife :3</p>
-                <p id="p2e" class="p1">//I did the rest of the code on my laptop</p>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">RP</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
+    </nav>
 
-        <div class="help">
-            <h2>Tools</h2>
-            <div class="tool">
-                    <img src="Js.png" alt="javascript Image">
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Rajendra Pasha</h1>
+            <p>A Full Stack web developer creating amazing web experiences</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image"></div>
+                <div class="about-text">
+                    <h3>Who I Am</h3>
+                    <p>I'm a junior Full Stack web developer with expertise in creating modern and user-friendly websites. With my experience in HTML, CSS, and JavaScript, I bring ideas to life through clean and efficient code.</p>
+                    <p>I create digital experiences that look great and work even better. Always learning, I keep up with the latest web tech to build smooth, user-friendly solutions.</p>
+                </div>
             </div>
-        </div> 
-
-        <button class="control-btn" onclick="showSection('projects')">Projects</button>
-        <div id="projects" class="section">
-            <h2>Projects</h2>
-            <p>Here are some of the projects I've been working on:</p>
-            <ul>
-                <li>Personal Website (Current)</li>
-                <li>Photography Portfolio</li>
-                <li>Coding Practice Projects</li>
-            </ul>
         </div>
+    </section>
 
-        <button class="control-btn" onclick="showSection('more-info')">More Info</button>
-        <div id="more-info" class="section">
-            <h2>Summary</h2>
-            <p>I'm passionate about learning new technologies and exploring the world of programming. My goal is to continuously improve my skills and create meaningful projects that can make a difference.</p>
-            <p>I also love photography and I'm always looking and learning for new ways to combine my interests and learn new things.</p>
+    <section id="projects">
+        <div class="section-container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Project One</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores hic exercitationem corporis beatae laudantium itaque nisi earum ab? Optio placeat exercitationem cum quidem quia repudiandae cumque molestias distinctio veniam excepturi.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Project Two</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores hic exercitationem corporis beatae laudantium itaque nisi earum ab? Optio placeat exercitationem cum quidem quia repudiandae cumque molestias distinctio veniam excepturi</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Project Three</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores hic exercitationem corporis beatae laudantium itaque nisi earum ab? Optio placeat exercitationem cum quidem quia repudiandae cumque molestias distinctio veniam excepturi</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
 
     <footer>
-        <div class="footer-content">
-            <a href="https://github.com/vtolin" target="_blank" class="social-link">
-                <img src="assets/githubLogo.jpg" alt="Github Logo" class="logos">
-                GitHub
-            </a>
-            <a href="https://www.instagram.com/manx100ultra/" target="_blank" class="social-link">
-                <img src="assets/ig_logo-removebg-preview.png" alt="Instagram Logo" class="logos">
-                Instagram
-            </a>
+        <p>&copy; 2025 Pasha. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/vtolin"><i class="fab fa-github"></i></a>
+            <a href="https://discordapp.com/users/775917004967903243"><i class="fab fa-discord"></i></a>
+            <a href="https://www.instagram.com/manx100ultra/"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
+
     <script src="script.js">
     </script>
 </body>
