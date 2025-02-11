@@ -7,29 +7,30 @@ anchor.addEventListener('click', function (e) {
 });
 });
 
-document.querySelector("contact-form").addEventListener("submit", function(e) {
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
+
             let formData = {
-                name: document.querySelector("#name").value,
-                email: document.querySelector("#email").value,
-                message: document.querySelector("#message").value
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
             };
 
             fetch(this.action, {
-                method: "POST",
+                method: 'POST',
                 headers: {
-                    contentType: "application/json",
-                    accept: "application/json"                
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify(formData)
-            })
             }).then(response => {
                 if (response.ok) {
-                    alert('Thank you, Your message has been sent')
-                    this.reset()
+                    alert('Thank you! Your message has been sent.');
+                    this.reset();
                 } else {
-                    alert('Oops! something went wrong. Please try again')
+                    alert('Oops! Something went wrong. Please try again.');
                 }
             }).catch(error => {
-                alert("Error sending message. Check your internet connection.")
-            })
+                alert('Error sending message. Check your internet connection.');
+            });
+        });
