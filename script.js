@@ -34,3 +34,52 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
                 alert('Error sending message. Check your internet connection.');
             });
         });
+
+
+      const toggleButton = document.querySelector(".darkmode-toggle");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      window.onload = function () {
+        const isDarkmode = localStorage.getItem("darkMode") === "true";
+        document.body.classList.toggle("dark-mode", isDarkmode);
+        toggleButton.textContent = isDarkmode ? "Light Mode" : "Dark Mode";
+
+        scrollInView();
+      };
+
+      toggleButton.addEventListener("click", function () {
+        const isDarkmode = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", isDarkmode);
+        toggleButton.textContent = isDarkmode ? "Light Mode" : "Dark Mode";
+      });
+      
+      // Mobile menu toggle
+      menuToggle.addEventListener("click", function() {
+        navLinks.classList.toggle("active");
+      });
+      
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", function() {
+          if (window.innerWidth <= 768) {
+            navLinks.classList.remove("active");
+          }
+        });
+      });
+
+      const scrollElements = document.querySelectorAll(
+        ".scroll-animate, .section-title, .about-image, .about-text, .project-card, .contact-form"
+      );
+
+      const scrollInView = () => {
+        scrollElements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            el.classList.add("visible");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", scrollInView);
+      window.addEventListener("load", scrollInView);
