@@ -16,7 +16,7 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
                 message: document.getElementById('message').value
             };
 
-            fetch(this.action, {
+            fetch(form.action, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
             }).then(response => {
                 if (response.ok) {
                     alert('Thank you! Your message has been sent.');
-                    this.reset();
+                    form.reset();
                 } else {
                     alert('Oops! Something went wrong. Please try again.');
                 }
