@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Rajendra Pasha | Full Stack Web Developer Portfolio"
+    />
+    <meta property="og:title" content="Rajendra Pasha Portfolio" />
+    <meta
+      property="og:description"
+      content="A Full Stack Developer showcasing web projects and photography skills."
+    />
+    <meta property="og:image" content="URL_TO_YOUR_PREVIEW_IMAGE" />
+    <meta property="og:type" content="website" />
+    <title>Rajendra Pasha</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styling/style.css">
+    <style>
+.photo-hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(to bottom right, #111, #222);
+  color: white;
+}
+
+.photo-gallery {
+  padding: 2rem;
+  background-color: #f8f8f8;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.photo-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.photo-item img {
+  width: 100%;
+  display: block;
+}
+
+.photo-item p {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">RP</div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+          <a href="/index.html">Main Page</a>
+          <button class="darkmode-toggle">Dark Mode</button>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="hero">
+
+    </section>
+
+      <header class="photo-hero">
+      <h1>My Photography</h1>
+      <p>A glimpse into moments I’ve captured</p>
+    </header>
+
+    <section class="photo-gallery">
+      <div class="gallery-grid">
+        <div class="photo-item">
+          <img src="photos/photo1.jpg" alt="Street shot 1" />
+          <p>Jakarta street | Fujifilm look</p>
+        </div>
+        <div class="photo-item">
+          <img src="photos/photo2.jpg" alt="Portrait bokeh" />
+          <p>Natural light portrait | 55-250mm</p>
+        </div>
+        <div class="photo-item">
+          <img src="photos/photo3.jpg" alt="Concert" />
+          <p>Outdoor concert | Manual exposure</p>
+        </div>
+        <!-- Add more as needed -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-container">
+        <h1 class="section-title scroll-animate">Get In Touch</h1>
+        <form
+          class="contact-form scroll-animate"
+          action="https://formspree.io/f/xdkalewo"
+          method="POST"
+        >
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="scroll-animate">
+      <p>&copy; 2025 Pasha. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/vtolin"><i class="fab fa-github"></i></a>
+        <a href="https://discordapp.com/users/775917004967903243"
+          ><i class="fab fa-discord"></i
+        ></a>
+        <a href="https://www.instagram.com/manx100ultra/"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script src="script.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+    <script>
+      smoothscroll.polyfill();
+    </script>
+  </body>
+</html>
