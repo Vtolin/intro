@@ -79,69 +79,126 @@
     </section>
 
     <section id="projects">
-  <div class="section-container">
-    <h1 class="section-title scroll-animate">My Projects</h1>
-
-    <!-- Project 1 -->
-    <div class="project-showcase scroll-animate">
-      <div class="project-info">
-        <h2>CRUD App</h2>
-        <div class="project-tags">
-          <span>Node.js</span>
-          <span>MySQL</span>
+      <div style="text-align: center">
+        <h1 class="section-title scroll-animate">My Projects</h1>
+      </div>
+      <div class="section-container-projects">
+        <!-- Project 1 -->
+        <div class="project-showcase scroll-animate">
+          <div class="project-info">
+            <h2>CRUD App</h2>
+            <div class="project-tags">
+              <span>Node.js</span>
+              <span>MySQL</span>
+            </div>
+            <p>
+              A simple CRUD web app built with Node.js and MySQL that lets users
+              create, read, update, and delete user records. Focused on backend
+              logic and database handling. Great for learning full-stack
+              fundamentals.
+            </p>
+          </div>
+          <div class="project-image-wrapper">
+            <img src="./assets/ss.png" alt="CRUD App Screenshot" />
+          </div>
         </div>
-        <p>
-          A simple CRUD web app built with Node.js and MySQL that lets users create, read, update, and delete user records. Focused on backend logic and database handling. Great for learning full-stack fundamentals.
-        </p>
-      </div>
-      <div class="project-image-wrapper">
-        <img src="./assets/ss.png" alt="CRUD App Screenshot" />
-      </div>
-    </div>
 
-    <!-- Project 2 -->
-    <div class="project-showcase scroll-animate">
-      <div class="project-info">
-        <h2>Text to Morse with Next.js</h2>
-        <div class="project-tags">
-          <span>Next.js</span>
-          <span>TypeScript</span>
+        <!-- Project 2 -->
+        <div class="project-showcase scroll-animate">
+          <div class="project-image-wrapper">
+            <img src="./assets/next.png" alt="Text to Morse Screenshot" />
+          </div>
+          <div class="project-info">
+            <h2>Text to Morse with Next.js</h2>
+            <div class="project-tags">
+              <span>Next.js</span>
+              <span>TypeScript</span>
+            </div>
+            <p>
+              A text-to-Morse code translator built with TypeScript and Next.js.
+              Users can input text and instantly see the corresponding Morse
+              code. A simple app for learning component structure and state
+              management.
+            </p>
+          </div>
         </div>
-        <p>
-          A text-to-Morse code translator built with TypeScript and Next.js. Users can input text and instantly see the corresponding Morse code. A simple app for learning component structure and state management.
-        </p>
-      </div>
-      <div class="project-image-wrapper">
-        <img src="./assets/next.png" alt="Text to Morse Screenshot" />
-      </div>
-    </div>
 
-    <!-- Project 3 -->
-    <div class="project-showcase scroll-animate">
-      <div class="project-info">
-        <h2>Restaurant Ordering System</h2>
-        <div class="project-tags">
-          <span>Next.js</span>
-          <span>MySQL</span>
-          <span>Tailwind CSS</span>
-          <span>TypeScript</span>
+        <!-- Project 3 -->
+        <div class="project-showcase scroll-animate">
+          <div class="project-info">
+            <h2>Restaurant Ordering System</h2>
+            <div class="project-tags">
+              <span>Next.js</span>
+              <span>MySQL</span>
+              <span>Tailwind CSS</span>
+              <span>TypeScript</span>
+            </div>
+            <p>
+              A full-stack ordering system where customers can browse a menu and
+              place orders, while admins manage them through a simple dashboard.
+              Built with Next.js, MySQL, and Tailwind CSS. No payment
+              integration, just pure order flow and management.
+            </p>
+          </div>
+          <div class="project-image-wrapper">
+            <img
+              src="./assets/porto3.png"
+              alt="Restaurant Ordering Screenshot"
+            />
+          </div>
         </div>
-        <p>
-          A full-stack ordering system where customers can browse a menu and place orders, while admins manage them through a simple dashboard. Built with Next.js, MySQL, and Tailwind CSS. No payment integration, just pure order flow and management.
-        </p>
       </div>
-      <div class="project-image-wrapper">
-        <img src="./assets/porto3.png" alt="Restaurant Ordering Screenshot" />
+    </section>
+
+    <section id="projects" class="cap">
+      <div style="text-align: center">
+        <h1 class="section-title scroll-animate">Skills</h1>
       </div>
-    </div>
+      <div class="section-container-projects">
+        <!-- skill 1 -->
+        <div class="skill-showcase scroll-animate">
+          <div class="project-info">
+            <h2>Web App development</h2>
+            <div class="skill-tags">
+              <span>Node.js</span>
+              <span>MySQL</span>
+            </div>
+            <p>
+              I build dynamic, responsive web applications with frameworks like
+              React and Next.js. From intuitive interfaces to efficient backend
+              systems, I deliver scalable solutions that focus on performance,
+              usability, and your project's unique goals.
+            </p>
+          </div>
+        </div>
 
-  </div>
-</section>
-
+        <!-- skill 2 -->
+        <div class="skill-showcase scroll-animate">
+          <div class="project-info">
+            <h2>Photography & Videography</h2>
+            <div class="skill-tags">
+              <span>Next.js</span>
+              <span>TypeScript</span>
+            </div>
+            <p>
+              I capture moments through a creative lens, blending technical
+              skill with artistic vision. Whether it's still images or dynamic
+              videos, I focus on producing visually compelling content that
+              tells a story and resonates with your audience. Checkout my
+              <a href="/fg.html" style="text-decoration: none; color: red"
+                >Photography Portfolio</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="contact">
       <div class="section-container">
-        <h1 class="section-title scroll-animate">Get In Touch</h1>
+        <h1 class="section-title scroll-animate" style="text-align: center">
+          Get In Touch
+        </h1>
         <form
           class="contact-form scroll-animate"
           action="https://formspree.io/f/xdkalewo"
@@ -179,7 +236,6 @@
         ></a>
       </div>
     </footer>
-
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
     <script>

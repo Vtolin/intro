@@ -272,7 +272,7 @@
         background-color: #333;
       }
 
-      /* Projects Section */
+      /* Services Section */
       .services-section {
         padding: 60px 20px;
         max-width: 1200px;
@@ -337,7 +337,10 @@
         line-height: 1.5;
       }
 
-      /* Contact Section */
+      /* Contact Section
+      #contact{
+        margin-top: -10vh;
+      } */
       .contact-form {
         max-width: 600px;
         margin: 0 auto;
