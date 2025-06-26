@@ -28,6 +28,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styling/style.css" />
+    <link rel="stylesheet" href="styling/projects.css" />
   </head>
   <body>
     <nav>
@@ -77,64 +78,66 @@
       </div>
     </section>
 
-    <section id="programming-skills">
-      <div class="section-container">
-        <h1 class="section-title scroll-animate">Programming Skills</h1>
-        <div class="skills-icons">
-          <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-          <i class="devicon-typescript-plain colored" title="TypeScript"></i>
-          <i class="devicon-react-original colored" title="React"></i>
-          <i class="devicon-nextjs-original-wordmark" title="Next.js"></i>
-          <i class="devicon-nodejs-plain colored" title="Node.js"></i>
-          <i class="devicon-tailwindcss-plain colored" title="Tailwind CSS"></i>
-          <i class="devicon-mysql-plain colored" title="MySQL"></i>
-        </div>
-      </div>
-    </section>
-
     <section id="projects">
-      <div class="section-container">
-        <h1 class="section-title scroll-animate">My Projects</h1>
-        <div class="projects-grid">
-          <div class="project-card scroll-animate">
-            <img class="project-image" src="./assets/ss.png" />
-            <div class="project-content">
-              <h3>CRUD App</h3>
-              <p>
-                A user management CRUD application built with Node.js and MySQL,
-                allowing users to create, read, update, and delete records
-                containing names, emails, and input dates. Project isnt deployed
-                but source code is available on GitHub.
-              </p>
-            </div>
-          </div>
-          <div class="project-card scroll-animate">
-            <img class="project-image" src="./assets/next.png" />
-            <div class="project-content">
-              <h3>Text to Morse with NextJs</h3>
-              <p>
-                A text to morse code translator built with TypeScript, powered
-                by Next.JS. It allows users to input text and receive the
-                corresponding Morse code output. Project isnt deployed but
-                source code is available on GitHub.
-              </p>
-            </div>
-          </div>
-          <div class="project-card scroll-animate">
-            <img class="project-image" src="assets/porto3.png"></img>
-            <div class="project-content">
-              <h3>Restaurant Ordering System</h3>
-              <p>
-               A full-stack restaurant ordering app built with Next.js, MySQL, Tailwind CSS, and TypeScript.
-Customers can place orders from the menu, and admins can manage them via a simple dashboard.
-Admin access uses basic frontend validation for now, with plans to integrate NextAuth.
-No online payments. The focus is on core ordering and admin functionality.
-              </p>
-            </div>
-          </div>
+  <div class="section-container">
+    <h1 class="section-title scroll-animate">My Projects</h1>
+
+    <!-- Project 1 -->
+    <div class="project-showcase scroll-animate">
+      <div class="project-info">
+        <h2>CRUD App</h2>
+        <div class="project-tags">
+          <span>Node.js</span>
+          <span>MySQL</span>
         </div>
+        <p>
+          A simple CRUD web app built with Node.js and MySQL that lets users create, read, update, and delete user records. Focused on backend logic and database handling. Great for learning full-stack fundamentals.
+        </p>
       </div>
-    </section>
+      <div class="project-image-wrapper">
+        <img src="./assets/ss.png" alt="CRUD App Screenshot" />
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-showcase scroll-animate">
+      <div class="project-info">
+        <h2>Text to Morse with Next.js</h2>
+        <div class="project-tags">
+          <span>Next.js</span>
+          <span>TypeScript</span>
+        </div>
+        <p>
+          A text-to-Morse code translator built with TypeScript and Next.js. Users can input text and instantly see the corresponding Morse code. A simple app for learning component structure and state management.
+        </p>
+      </div>
+      <div class="project-image-wrapper">
+        <img src="./assets/next.png" alt="Text to Morse Screenshot" />
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-showcase scroll-animate">
+      <div class="project-info">
+        <h2>Restaurant Ordering System</h2>
+        <div class="project-tags">
+          <span>Next.js</span>
+          <span>MySQL</span>
+          <span>Tailwind CSS</span>
+          <span>TypeScript</span>
+        </div>
+        <p>
+          A full-stack ordering system where customers can browse a menu and place orders, while admins manage them through a simple dashboard. Built with Next.js, MySQL, and Tailwind CSS. No payment integration, just pure order flow and management.
+        </p>
+      </div>
+      <div class="project-image-wrapper">
+        <img src="./assets/porto3.png" alt="Restaurant Ordering Screenshot" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <section id="contact">
       <div class="section-container">
