@@ -85,6 +85,11 @@ body.dark-mode .skill-tags span {
   margin-top: -15vh;
 }
 
+.border{
+    border-bottom: 3px solid white;
+    margin-top: 45px;
+}
+
 @media (max-width: 768px) {
   .project-showcase,
   .cap2 {

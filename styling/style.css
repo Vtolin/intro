@@ -337,10 +337,10 @@
         line-height: 1.5;
       }
 
-      /* Contact Section
+      /*.Contact Section*/
       #contact{
-        margin-top: -10vh;
-      } */
+        margin-top: -15vh;
+      } 
       .contact-form {
         max-width: 600px;
         margin: 0 auto;
