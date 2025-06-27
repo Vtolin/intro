@@ -1,13 +1,13 @@
-# 🌐 Rajendra Pasha — Personal Website
+# Personal Website
 
 Welcome to the source code of my personal portfolio website!  
-This site is built with **pure HTML, CSS, and JavaScript** — no frameworks, no libraries — just clean, handwritten code. It's fully responsive, optimized for performance, and hosted with ❤️ on [Vercel](https://vercel.com).
+This site is built with **pure HTML, CSS, and JavaScript** — no frameworks, no libraries — just clean, handwritten code. It's fully responsive, optimized for performance, and hosted on [Vercel](https://vercel.com).
 
-🖥️ **Live Demo:** [intpas.vercel.app](https://intpas.vercel.app)
+**Live Demo:** [intpas.vercel.app](https://intpas.vercel.app)
 
 ---
 
-## 📁 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Project Structure](#project-structure)
@@ -18,7 +18,7 @@ This site is built with **pure HTML, CSS, and JavaScript** — no frameworks, no
 
 ---
 
-## 📖 Overview
+## Overview
 
 This personal website showcases:
 - My **projects** (including full-stack apps)
@@ -31,7 +31,7 @@ It’s meant to be both a creative outlet and a developer portfolio.
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 ```bash
 intro/
 ├── assets/ # Images and screenshots
@@ -45,7 +45,7 @@ intro/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 This project doesn't require any build tools or frameworks.
 
