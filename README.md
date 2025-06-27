@@ -59,7 +59,7 @@ git clone https://github.com/Vtolin/intro.git
 Just open index.html directly in your browser, or deploy it with services like Vercel, Netlify, or GitHub Pages.
 
 # Features
-No frameworks — just HTML, CSS, and JS
+No frameworks. Just pure HTML, CSS, and JS madness
 
 Dark mode toggle with localStorage memory
 
