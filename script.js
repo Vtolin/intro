@@ -7,6 +7,8 @@ anchor.addEventListener('click', function (e) {
 });
 });
 
+
+
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault()
             const form = this
@@ -55,12 +57,10 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
         toggleButton.textContent = isDarkmode ? "Light Mode" : "Dark Mode";
       });
       
-      // Mobile menu toggle
       menuToggle.addEventListener("click", function() {
         navLinks.classList.toggle("active");
       });
       
-      // Close mobile menu when clicking on a link
       document.querySelectorAll(".nav-links a").forEach(link => {
         link.addEventListener("click", function() {
           if (window.innerWidth <= 768) {

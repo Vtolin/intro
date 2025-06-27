@@ -33,12 +33,11 @@
   <body>
     <nav>
       <div class="nav-container">
-        <div class="logo">RP</div>
+        <div class="logo"><a href="#home" style="text-decoration: none; color: white;">RP</a></div>
         <div class="menu-toggle">
           <i class="fas fa-bars"></i>
         </div>
         <div class="nav-links">
-          <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
@@ -49,7 +48,7 @@
     </nav>
 
     <section id="home" class="hero">
-      <div class="hero-content">
+      <div class="hero-content scroll-animate">
         <h1>Hi, I'm Rajendra Pasha</h1>
         <p>A Full Stack web developer creating amazing web experiences</p>
         <a href="#projects" class="cta-button">View My Work</a>
@@ -85,9 +84,9 @@
       <div class="section-container-projects">
         <!-- Project 1 -->
         <div class="project-showcase scroll-animate">
-          <div class="project-info">
+          <div class="project-info scroll-animate">
             <h2>CRUD App</h2>
-            <div class="project-tags">
+            <div class="project-tags scroll-animate">
               <span>Node.js</span>
               <span>MySQL</span>
             </div>
@@ -98,19 +97,19 @@
               fundamentals.
             </p>
           </div>
-          <div class="project-image-wrapper">
+          <div class="project-image-wrapper scroll-animate fade-left">
             <img src="./assets/ss.png" alt="CRUD App Screenshot" />
           </div>
         </div>
 
         <!-- Project 2 -->
         <div class="project-showcase scroll-animate">
-          <div class="project-image-wrapper">
+          <div class="project-image-wrapper scroll-animate">
             <img src="./assets/next.png" alt="Text to Morse Screenshot" />
           </div>
-          <div class="project-info">
+          <div class="project-info scroll-animate">
             <h2>Text to Morse with Next.js</h2>
-            <div class="project-tags">
+            <div class="project-tags scroll-animate">
               <span>Next.js</span>
               <span>TypeScript</span>
             </div>
@@ -125,9 +124,9 @@
 
         <!-- Project 3 -->
         <div class="project-showcase scroll-animate">
-          <div class="project-info">
+          <div class="project-info scroll-animate">
             <h2>Restaurant Ordering System</h2>
-            <div class="project-tags">
+            <div class="project-tags scroll-animate">
               <span>Next.js</span>
               <span>MySQL</span>
               <span>Tailwind CSS</span>
@@ -140,7 +139,7 @@
               integration, just pure order flow and management.
             </p>
           </div>
-          <div class="project-image-wrapper">
+          <div class="project-image-wrapper scroll-animate">
             <img
               src="./assets/porto3.png"
               alt="Restaurant Ordering Screenshot"
@@ -154,12 +153,12 @@
       <div style="text-align: center">
         <h1 class="section-title scroll-animate">Skills</h1>
       </div>
-      <div class="section-container-projects">
+      <div class="section-container-projects scroll-animate">
         <!-- skill 1 -->
-        <div class="skill-showcase scroll-animate">
-          <div class="project-info">
+        <div class="skill-showcase">
+          <div class="project-info scroll-animate">
             <h2>Web App development</h2>
-            <div class="skill-tags">
+            <div class="skill-tags scroll-animate">
               <span>Node.js</span>
               <span>MySQL</span>
             </div>
@@ -175,9 +174,9 @@
 
         <!-- skill 2 -->
         <div class="skill-showcase scroll-animate">
-          <div class="project-info">
+          <div class="project-info scroll-animate">
             <h2>Photography & Videography</h2>
-            <div class="skill-tags">
+            <div class="skill-tags scroll-animate">
               <span>Next.js</span>
               <span>TypeScript</span>
             </div>
@@ -186,11 +185,11 @@
               skill with artistic vision. Whether it's still images or dynamic
               videos, I focus on producing visually compelling content that
               tells a story and resonates with your audience. Checkout my
-              <a href="/fg.html" style="text-decoration: none; color: red"
+              <a href="/fg.html" style="text-decoration: none; color: #0984e3"
                 >Photography Portfolio</a
               >
             </p>
-            <div class="border"></div>
+            <div class="border scroll-animate"></div>
           </div>
         </div>
       </div>
@@ -243,5 +242,6 @@
     <script>
       smoothscroll.polyfill();
     </script>
+
   </body>
 </html>
