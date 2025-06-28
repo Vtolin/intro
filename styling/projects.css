@@ -91,12 +91,25 @@ body.dark-mode .skill-tags span {
 }
 
 @media (max-width: 768px) {
-  .project-showcase,
-  .cap2 {
+  .project-showcase {
     flex-direction: column;
+    height: auto;
+    align-items: center; 
+    text-align: center; 
   }
 
+  .project-info,
   .project-image-wrapper {
-    order: -1;
+    width: 100%;      
+    min-width: unset;  
+  }
+
+  .project-info {
+    margin-top: 1rem;
+  }
+
+  .project-image-wrapper img {
+    width: 100%;
+    height: auto;
   }
 }
