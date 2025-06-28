@@ -112,4 +112,9 @@ body.dark-mode .skill-tags span {
     width: 100%;
     height: auto;
   }
+  .project-showcase.reversed .project-image-wrapper {
+    order: -1;
+  }
 }
+
+
