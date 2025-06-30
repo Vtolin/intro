@@ -12,6 +12,8 @@ html {
 }
 
 body {
+  max-width: 1500px;
+  margin: 0 auto;
   line-height: 1.6;
   color: #333;
   background-color: #f8f9fa;
@@ -124,7 +126,7 @@ body.dark-mode .menu-toggle {
 }
 
 .hero {
-  height: 100vh;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -342,7 +344,7 @@ body.dark-mode .service-item h3 {
 
 /*.Contact Section*/
 #contact {
-  margin-top: -15vh;
+  margin-top: -80px;
 }
 .contact-form {
   max-width: 600px;
